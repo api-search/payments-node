@@ -1,2 +1,2 @@
-# payments
-This is a payment API index.
+## Payments
+A Payments APIs index.

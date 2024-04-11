@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APIs.io - Payments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">APIs.io - Payments</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="http://localhost:4000/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000/apis/">APIs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000/tags/">Tags</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000/rules/">Rules</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000/properties/">Properties</a>
+            </li>                                    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Network
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Artificial Intelligence</a></li>
+                <li><a class="dropdown-item" href="#">Banking</a></li>
+                <li><a class="dropdown-item" href="#">Cloud</a></li>
+                <li><a class="dropdown-item" href="#">Code</a></li>                
+                <li><a class="dropdown-item" href="#">Commerce</a></li>
+                <li><a class="dropdown-item" href="#">Documents</a></li>     
+                <li><a class="dropdown-item" href="#">Financial</a></li>              
+                <li><a class="dropdown-item" href="#">Infrastructure</a></li>                             
+                <li><a class="dropdown-item" href="#">Messaging</a></li>
+                <li><a class="dropdown-item" href="#">Travel</a></li>
+                <li><a class="dropdown-item" href="#">Videos</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col">
+
+            <h1>Rules</h1>
+            <p>These are the rules used to rate all of the APIs available in this payments API index, adding another dimension to explore the APIs available here.</p>
+            <hr>             
+            <table width="100%">
+            
+            
+                <tr>
+                    <td width="40%">Contact Email - Requires contact email.</td>
+                    <td width="20%" align="center"><a href="/rules/openapi-info-contact-email-error/"><button type="button" class="btn btn-outline-success">Details</button></a></td>
+                </tr>
+            
+                <tr>
+                    <td width="40%">Contact Email - Has contact email.</td>
+                    <td width="20%" align="center"><a href="/rules/openapi-info-contact-email-info/"><button type="button" class="btn btn-outline-success">Details</button></a></td>
+                </tr>
+            
+                <tr>
+                    <td width="40%">External Docs - Warn external docs.</td>
+                    <td width="20%" align="center"><a href="/rules/openapi-external-docs-error/"><button type="button" class="btn btn-outline-success">Details</button></a></td>
+                </tr>
+              
+            </table>   
+            <hr>        
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>            
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

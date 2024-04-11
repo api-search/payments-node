@@ -1,0 +1,54 @@
+title: APIs.io - Payments
+url: http://127.0.0.1:4000
+
+node: payments
+
+permalink: /:categories/:year/:month/:day/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+
+categories_path : /categories.html
+tags_path : /tags.html
+
+github_org: api-search
+github_repo: payments
+
+
+collections:
+  apis:
+    output: true
+    permalink: /apis/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/   
+  rules:
+    output: true
+    permalink: /rules/:path/  
+  properties:
+    output: true
+    permalink: /properties/:path/           
+
+defaults:
+
+  - scope:
+      path:         ""
+      type:         apis
+    values:
+      layout:       apis
+
+  - scope:
+      path:         ""
+      type:         tags
+    values:
+      layout:       tags      
+
+  - scope:
+      path:         ""
+      type:         rules
+    values:
+      layout:       rules        
+
+  - scope:
+      path:         ""
+      type:         properties
+    values:
+      layout:       properties         
