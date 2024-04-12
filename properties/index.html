@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Explore - Properties
+title: Properties
 ---
 <div class="container">
     <div class="row">
@@ -13,7 +13,7 @@ title: Explore - Properties
             <table width="100%">
             {% for property in site.properties %}
                 <tr>
-                    <td width="40%">{{ property.name }}</td>
+                    <td width="80%">{{ property.name }}</td>
                     <td width="20%" align="center"><a href="{{ property.url }}"><button type="button" class="btn btn-outline-success">Details</button></a></td>
                 </tr>
             {% endfor %}  

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Explore - Rules
+title: Rules
 ---
 <div class="container">
     <div class="row">
@@ -14,7 +14,7 @@ title: Explore - Rules
             {% assign rules = site.rules | sort: 'name' %}
             {% for rule in rules %}
                 <tr>
-                    <td width="40%">{{ rule.name }} - {{ rule.description }}</td>
+                    <td width="80%">{{ rule.name }} - {{ rule.description }}</td>
                     <td width="20%" align="center"><a href="{{ rule.url }}"><button type="button" class="btn btn-outline-success">Details</button></a></td>
                 </tr>
             {% endfor %}  

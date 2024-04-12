@@ -12,6 +12,7 @@ tags_path : /tags.html
 github_org: api-search
 github_repo: payments
 
+search_local: true
 
 collections:
   apis:

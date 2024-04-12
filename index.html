@@ -1,6 +1,165 @@
 ---
 layout: page
-title: Template
+title: Search
 ---
 
-<p>Hello World...</p>
+<center>
+<p class="uk-text-lead uk-text-center" style="font-size: 24px; margin-bottom: 10px;">{{ site.title }} {{ page.title }} Index</p>
+<form class="row">
+    <table align="center" style="width: 250px;">
+        <tr>
+            <td style="width: 350px;" align="right">
+                <input type="text" class="form-control" id="api-search" style="width: 250px" onfocus="search(); return false;">
+            </td>
+            <td style="width: 50px;" align="center">
+                <input type="text" class="form-control" id="api-limit" style="width: 50px" value="10">
+            </td>                                
+            <td style="width: 50px;">
+                <button type="submit" class="btn btn-dark" onclick="search(); return false;">Search</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</center>
+<table  class="table table-hover" id="search-results"></table>    
+{% if site.search_local == true %}     
+<script>      
+    function search(){
+
+        let query = 'api';
+        let prime = 1;
+        if(document.getElementById('api-search').value != ''){                        
+            query = document.getElementById('api-search').value;
+            prime = 0;
+        }
+
+        let limit = document.getElementById('api-limit').value;
+        if(limit == ''){ limit = 10; }
+
+        const options = {
+                method: 'get',
+                headers: {
+                    "Accept": "application/json"
+                }
+            };	
+
+        fetch('api/index.json',options)
+            .then(function(response) {
+                if (!response.ok) {
+                    console.log('Error with Status Code: ' + response.status);
+                    return;
+                }
+                response.json().then(function(search) {	
+                
+                    if(prime == 0){
+                        
+                        let rows = '';
+                        if(search.data.length > 0){
+                            for (let i = 1; i < search.data.length; i++) {
+
+                                console.log(search.data[i].name);
+
+                                var query_search = query.toLowerCase();
+                                var name_search = search.data[i].name.toLowerCase();
+                                var description_search = search.data[i].description.toLowerCase();
+
+                                var name_match = name_search.includes(query_search);
+                                var description_match = description_search.includes(query_search);
+
+                                var tag_match = false;
+                                for (let j = 1; j < search.data[i].tags.length; j++) {
+                                    //console.log(search.data[i].tags[j]);
+                                    var tag_search = search.data[i].tags[j].toLowerCase();                                                       
+                                    tag_match = tag_search.includes(query_search);                                    
+                                }
+
+                                //console.log(query_search);
+                                //console.log(search.data[i].name);
+                                //console.log(name_match);
+                                //console.log(description_match);
+                                //console.log(tag_match);
+
+                                if(name_match == true || description_match == true || tag_match == true){
+
+                                rows += '<tr>';
+                                rows += '<th scope="row"></th>';
+                                rows += '<td style="text-align:left; vertical-align: middle;">' + search.data[i].name + '</td>';
+                                rows += '<td style="width: 50px;"><a href="' + search.data[i].humanURL + '" target="_blank"><button type="button" class="btn btn-outline-primary">API</button></a></td>';
+                                rows += '<td style="width: 50px;"><a href="apis/' + search.data[i].slug + '/apis/" target="_blank"><button type="button" class="btn btn-outline-success">INFO</button></a></td>';
+                                rows += '</tr>';
+
+                                }
+
+                            }
+                            document.getElementById('search-results').innerHTML = rows;
+                        }
+                        else{
+                            document.getElementById('search-results').innerHTML = '<tr><th scope="row"></th><td style="padding: 25px;">No Results</td></tr>';
+                        }
+                        
+                        
+                    }
+                });
+            })
+            .catch(function(err) {
+                console.log('Error: ' + err);
+        });               
+    }
+</script>
+{% else %}
+<script>      
+    function search(){
+
+        let query = 'api';
+        let prime = 1;
+        if(document.getElementById('api-search').value != ''){                        
+            query = document.getElementById('api-search').value;
+            prime = 0;
+        }
+
+        let limit = document.getElementById('api-limit').value;
+        if(limit == ''){ limit = 10; }
+
+        const options = {
+                method: 'get',
+                headers: {
+                    "Accept": "application/json"
+                }
+            };	
+
+        fetch('{{ site.search_url }}?search=' + query + '&limit=' + limit + '&page=0',options)
+            .then(function(response) {
+                if (!response.ok) {
+                    console.log('Error with Status Code: ' + response.status);
+                    return;
+                }
+                response.json().then(function(search) {	
+                
+                    if(prime == 0){
+                        
+                        let rows = '';
+                        if(search.data.length > 0){
+                            for (let i = 1; i < search.data.length; i++) {
+                                rows += '<tr>';
+                                rows += '<th scope="row"></th>';
+                                rows += '<td style="text-align:left; vertical-align: middle;">' + search.data[i].name + '</td>';
+                                rows += '<td style="width: 50px;"><a href="' + search.data[i].humanURL + '" target="_blank"><button type="button" class="btn btn-outline-primary">API</button></a></td>';
+                                rows += '<td style="width: 50px;"><a href="https://apis.io/' + search.data[i].slug + '" target="_blank"><button type="button" class="btn btn-outline-success">INFO</button></a></td>';
+                                rows += '</tr>';
+                            }
+                            document.getElementById('search-results').innerHTML = rows;
+                        }
+                        else{
+                            document.getElementById('search-results').innerHTML = '<tr><th scope="row"></th><td style="padding: 25px;">No Results</td></tr>';
+                        }
+                        
+                        
+                    }
+                });
+            })
+            .catch(function(err) {
+                console.log('Error: ' + err);
+        });               
+    }
+</script>
+{% endif %}                    
