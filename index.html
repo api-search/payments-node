@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Search
+title: Network Search
 ---
 
 <center>
-<p class="uk-text-lead uk-text-center" style="font-size: 24px; margin-bottom: 10px;">{{ site.name }} {{ page.title }} Index</p>
+<p class="uk-text-lead uk-text-center" style="font-size: 24px; margin-bottom: 10px;">{{ site.name }} {{ page.title }}</p>
 <form class="row">
     <table align="center" style="width: 250px;">
         <tr>
@@ -52,6 +52,9 @@ title: Search
         const options = {
                 method: 'get'
             };	
+
+        openapi_url = openapi_url.replace("properties","overlays");
+        openapi_url = openapi_url.replace("-openapi-original.yml","-openapi-search.yml");
 
         fetch(openapi_url,options)
             .then(function(response) {
@@ -159,19 +162,19 @@ title: Search
                         search_json.push(api);
                         document.getElementById("search_json").value = JSON.stringify(search_json);
 
-                        console.log("API: " + api.name); 
-                        console.log("SEARCH: " + query_search); 
-                        console.log("api name match: " + api_name_match);
-                        console.log("api desc match: " + api_description_match);
-                        console.log("api tag match: " + api_tag_match);  
+                        //console.log("API: " + api.name); 
+                        //console.log("SEARCH: " + query_search); 
+                        //console.log("api name match: " + api_name_match);
+                        //console.log("api desc match: " + api_description_match);
+                        //console.log("api tag match: " + api_tag_match);  
 
-                        console.log("oas name match: " + oas_name_match);
-                        console.log("oas desc match: " + oas_description_match);
-                        console.log("oas tag match: " + oas_tag_match);   
+                        //console.log("oas name match: " + oas_name_match);
+                        //console.log("oas desc match: " + oas_description_match);
+                        //console.log("oas tag match: " + oas_tag_match);   
                         
-                        console.log("operation name match: " + operation_summary_match);
-                        console.log("operation desc match: " + operation_description_match);
-                        console.log("operation tag match: " + operation_tag_match);                       
+                        //console.log("operation name match: " + operation_summary_match);
+                        //console.log("operation desc match: " + operation_description_match);
+                        //console.log("operation tag match: " + operation_tag_match);                       
 
                         displaySearchJSON();
 
@@ -192,6 +195,10 @@ title: Search
                 method: 'get'
             };	
 
+        //console.log(node_url);
+        // PULL OVERLAY
+        //node_url = node_url.replace("apis.md","overlays/apis-io-search.yml");
+
         fetch(node_url,options)
             .then(function(response) {
                 if (!response.ok) {
@@ -208,32 +215,60 @@ title: Search
                         const doc = jsyaml.load(yaml);
                         //console.log(doc.name);
 
-                        // BEGIN API INDEX
-                        for (let i = 0; i < doc.apis.length; i++) {
-                            
-                            var api_name = doc.apis[i].name;
-                            var api_description = doc.apis[i].description;
-                            var api_tags = doc.apis[i].tags;
+                        node_url = node_url.replace("apis.md","overlays/apis-io-search.yml");
 
-                            //console.log(api_name);
-                            //console.log(api_description);
-                            //console.log(api_tags);
-
-                            // PROPERTIES
-                            for (let j = 0; j < doc.apis[i].properties.length; j++) {  
-                                var property_type = doc.apis[i].properties[j].type;  
-                                var property_url = doc.apis[i].properties[j].url;  
-                                if(property_type=='OpenAPI'){
-                                    if(property_url.includes('properties/')){
-                                        var openapi_url = node_url.replace("apis.md",property_url);                              
-                                        //console.log(openapi_url);
-                                        pullOpenAPI(doc.apis[i],openapi_url,query,network_url) 
-                                        }
-                                    }
+                        fetch(node_url,options)
+                            .then(function(response) {
+                                if (!response.ok) {
+                                    console.log('Error with Status Code: ' + response.status);
+                                    return;
                                 }
+                                response.text().then(function(overlay_yaml) {	
 
-                            }   
-                        // END API INDEX
+                                    overlay_yaml = overlay_yaml.replace("---","");
+                                    overlay_yaml = overlay_yaml.replace("---","");
+
+                                    try {
+
+                                        const overlay_doc = jsyaml.load(overlay_yaml);
+                                        //console.log(doc.name);                        
+
+                                        // BEGIN API INDEX
+                                        for (let i = 0; i < doc.apis.length; i++) {
+                                            
+                                            var api_name = overlay_doc.apis[i].name;
+                                            var api_description = overlay_doc.apis[i].description;
+                                            var api_tags = overlay_doc.apis[i].tags;
+
+                                            //console.log(api_name);
+                                            //console.log(api_description);
+                                            //console.log(api_tags);
+
+                                            // PROPERTIES
+                                            for (let j = 0; j < doc.apis[i].properties.length; j++) {  
+                                                var property_type = doc.apis[i].properties[j].type;  
+                                                var property_url = doc.apis[i].properties[j].url;  
+                                                if(property_type=='OpenAPI'){
+                                                    if(property_url.includes('properties/')){
+                                                        var openapi_url = node_url.replace("apis.md",property_url);                              
+                                                        //console.log(openapi_url);
+                                                        pullOpenAPI(overlay_doc.apis[i],openapi_url,query,network_url) 
+                                                        }
+                                                    }
+                                                }
+
+                                            }   
+                                        // END API INDEX
+
+                                    } catch (e) {
+                                        console.log(e);
+                                    }                    
+                                        
+                                });
+                            })
+                            .catch(function(err) {
+                                console.log('Error: ' + err);
+                        });                                         
 
                     } catch (e) {
                         console.log(e);
@@ -261,7 +296,7 @@ title: Search
                 }
                 response.json().then(function(search) {	
 
-                    console.log(search.name); 
+                    //console.log(search.name); 
 
                     for (let i = 0; i < search.includes.length; i++) {
                         //console.log(search.includes[i].name + ' - ' + search.includes[i].url);
@@ -278,6 +313,9 @@ title: Search
 
     function search(){
 
+        document.getElementById('search-results').innerHTML = '';
+        document.getElementById("search_json").value = '[]';
+
         let query = 'api';
 
         if(document.getElementById('api-search').value != ''){                        
@@ -288,14 +326,12 @@ title: Search
         if(limit == ''){ limit = 10; }
 
         // Search Local
-        searchNode('api/index.json',query);
+        searchNode('api/index.json',query);        
 
         {% assign apis = site.data.apis %}
-        {% for node in apis.network %}
-            
-        // Search Network
-        searchNode('{{ node.url }}',query);
-
+        {% for node in apis.network %}      
+            // Search Network
+            searchNode('{{ node.url }}',query);
         {% endfor %}         
               
     }
@@ -303,9 +339,6 @@ title: Search
 {% else %} 
 <script>      
     function search(){
-
-        document.getElementById('search-results').innerHTML = '';
-        document.getElementById("search_json").value = '[]';
 
         let query = 'api';
         if(document.getElementById('api-search').value != ''){                        
