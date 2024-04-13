@@ -23,18 +23,9 @@ title: Search
 </center>
 <table  class="table table-hover" id="search-results"></table>    
 {% if site.search_local == true %}     
-<script>      
-    function search(){
+<script>     
 
-        let query = 'api';
-        let prime = 1;
-        if(document.getElementById('api-search').value != ''){                        
-            query = document.getElementById('api-search').value;
-            prime = 0;
-        }
-
-        let limit = document.getElementById('api-limit').value;
-        if(limit == ''){ limit = 10; }
+    function searchNode(node_url){
 
         const options = {
                 method: 'get',
@@ -43,7 +34,7 @@ title: Search
                 }
             };	
 
-        fetch('api/index.json',options)
+        fetch(node_url,options)
             .then(function(response) {
                 if (!response.ok) {
                     console.log('Error with Status Code: ' + response.status);
@@ -81,12 +72,12 @@ title: Search
 
                                 if(name_match == true || description_match == true || tag_match == true){
 
-                                rows += '<tr>';
-                                rows += '<th scope="row"></th>';
-                                rows += '<td style="text-align:left; vertical-align: middle;">' + search.data[i].name + '</td>';
-                                rows += '<td style="width: 50px;"><a href="' + search.data[i].humanURL + '" target="_blank"><button type="button" class="btn btn-outline-primary">API</button></a></td>';
-                                rows += '<td style="width: 50px;"><a href="apis/' + search.data[i].slug + '/apis/" target="_blank"><button type="button" class="btn btn-outline-success">INFO</button></a></td>';
-                                rows += '</tr>';
+                                    rows += '<tr>';
+                                    rows += '<th scope="row"></th>';
+                                    rows += '<td style="text-align:left; vertical-align: middle;">' + search.data[i].name + '</td>';
+                                    rows += '<td style="width: 50px;"><a href="' + search.data[i].humanURL + '" target="_blank"><button type="button" class="btn btn-outline-primary">API</button></a></td>';
+                                    rows += '<td style="width: 50px;"><a href="apis/' + search.data[i].slug + '/apis/" target="_blank"><button type="button" class="btn btn-outline-success">INFO</button></a></td>';
+                                    rows += '</tr>';
 
                                 }
 
@@ -103,10 +94,36 @@ title: Search
             })
             .catch(function(err) {
                 console.log('Error: ' + err);
-        });               
+        }); 
+
+    }
+
+    function search(){
+
+        let query = 'api';
+        let prime = 1;
+        if(document.getElementById('api-search').value != ''){                        
+            query = document.getElementById('api-search').value;
+            prime = 0;
+        }
+
+        let limit = document.getElementById('api-limit').value;
+        if(limit == ''){ limit = 10; }
+
+        // Search Local
+        searchNode('api/index.json');
+
+        {% assign apis = site.data.apis %}
+        {% for node in apis.network %}
+            
+        // Search Network
+        searchNode('{{ node.url }}');
+
+        {% endfor %}         
+              
     }
 </script>
-{% else %}
+{% else %} 
 <script>      
     function search(){
 
