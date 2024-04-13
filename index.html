@@ -304,6 +304,7 @@ title: Search
 <script>      
     function search(){
 
+        document.getElementById('search-results').innerHTML = '';
         document.getElementById("search_json").value = '[]';
 
         let query = 'api';
