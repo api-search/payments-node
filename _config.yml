@@ -1,7 +1,14 @@
-title: APIs.io - Payments
-url: http://127.0.0.1:4000
+name: APIs.io - Payments
+description: The APIs that make payments possible, as well as a number of other related capabilities.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+
+url: https://payments.apis.io
 
 node: payments
+
+keywords:
+
+- Payments
 
 permalink: /:categories/:year/:month/:day/:title/
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]

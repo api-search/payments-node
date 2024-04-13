@@ -2,17 +2,15 @@
 layout: none
 ---           
 {
-"specificationVersion": "0.17",
-"aid": "payments",
-"name": "Payments",
-"description": "The APIs that make payments possible, as well as a number of other related capabilities.",
-"image": "https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
-"url": "https://payments.apis.io/apis.json",
-"created": "2024/04/11",
-"modified": "2024/04/11",
-"tags": [
-    "Payments"
-],
+"specificationVersion": "0.18",
+"aid": "{{ site.node }}",
+"name": "{{ site.name }}",
+"description": "{{ site.description }}",
+"image": "{{ site.image }}",
+"url": "{{ site.url }}/apis.json",
+"created": "2024/04/13",
+"modified": "2024/04/13",
+"tags": {{ site.keywords | jsonify }},
 "includes": [{% for api in site.apis %}{% assign pos = api.url | size | minus: 1 %}{% assign len = api.url | size %}{% assign url = api.url | slice: 0, pos %}{% assign url = url | slice: 1, len %} 
     {
     "name": "{{ api.name | strip_newlines }}",
