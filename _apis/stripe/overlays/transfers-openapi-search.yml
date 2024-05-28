@@ -9,8 +9,8 @@ paths:
         transfers are returned in sorted order, with the most recently created
         transfers appearing first.</p>
       tags:
-        - V1
         - Transfers
+      summary: Retrieve Transfers
     post:
       description: >-
         <p>To send funds from your Stripe account to a connected account, you
@@ -18,8 +18,8 @@ paths:
         must be able to cover the transfer amount, or you’ll receive an
         “Insufficient Funds” error.</p>
       tags:
-        - V1
         - Transfers
+      summary: Create Transfers
   /v1/transfers/{id}/reversals:
     get:
       description: >-
@@ -29,10 +29,9 @@ paths:
         API method and the <code>limit</code> and <code>starting_after</code>
         parameters to page through additional reversals.</p>
       tags:
-        - V1
-        - Transfers
-        - Id
         - Reversals
+        - Transfers
+      summary: Retrieve Transfers Id Reversals
     post:
       description: >-
         <p>When you create a new reversal, you must specify a transfer to create
@@ -48,10 +47,9 @@ paths:
         method will return an error when called on an already-reversed transfer,
         or when trying to reverse more money than is left on a transfer.</p>
       tags:
-        - V1
-        - Transfers
-        - Id
         - Reversals
+        - Transfers
+      summary: Create Transfers Id Reversals
   /v1/transfers/{transfer}:
     get:
       description: >-
@@ -59,11 +57,8 @@ paths:
         transfer ID from either a transfer creation request or the transfer
         list, and Stripe will return the corresponding transfer information.</p>
       tags:
-        - V1
         - Transfers
-        - Id
-        - Reversals
-        - Transfer
+      summary: Retrieve Transfers Transfer
     post:
       description: >-
         <p>Updates the specified transfer by setting the values of the
@@ -73,11 +68,8 @@ paths:
 
         <p>This request accepts only metadata as an argument.</p>
       tags:
-        - V1
         - Transfers
-        - Id
-        - Reversals
-        - Transfer
+      summary: Create Transfers Transfer
   /v1/transfers/{transfer}/reversals/{id}:
     get:
       description: >-
@@ -85,11 +77,9 @@ paths:
         on the transfer object, but you can also retrieve details about a
         specific reversal stored on the transfer.</p>
       tags:
-        - V1
-        - Transfers
-        - Id
         - Reversals
-        - Transfer
+        - Transfers
+      summary: Retrieve Transfers Transfer Reversals Id
     post:
       description: >-
         <p>Updates the specified reversal by setting the values of the
@@ -99,8 +89,6 @@ paths:
 
         <p>This request only accepts metadata and description as argu
       tags:
-        - V1
-        - Transfers
-        - Id
         - Reversals
-        - Transf
+        - Transfers
+      summary: Create Transfers Transfer Reversals Id
