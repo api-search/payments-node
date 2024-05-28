@@ -9,8 +9,8 @@ paths:
         returned in sorted order, with the most recent charges appearing
         first.</p>
       tags:
-        - V1
         - Charges
+      summary: Retrieve Charges
     post:
       description: >-
         <p>Use the <a href="/docs/api/payment_intents">Payment Intents API</a>
@@ -22,8 +22,8 @@ paths:
         object used to request payment, so this method is limited to legacy
         integrations.</p>
       tags:
-        - V1
         - Charges
+      summary: Create Charges
   /v1/charges/search:
     get:
       description: >-
@@ -39,9 +39,9 @@ paths:
         to an hour behind during outages. Search functionality is not available
         to merchants in India.</p>
       tags:
-        - V1
         - Charges
         - Search
+      summary: Retrieve Charges Search
   /v1/charges/{charge}:
     get:
       description: >-
@@ -51,19 +51,17 @@ paths:
         The same information is returned when creating or refunding the
         charge.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
+        - Charges
+      summary: Retrieve Charges Charge
     post:
       description: >-
         <p>Updates the specified charge by setting the values of the parameters
         passed. Any parameters not provided will be left unchanged.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
+        - Charges
+      summary: Create Charges Charge
   /v1/charges/{charge}/capture:
     post:
       description: >-
@@ -80,41 +78,34 @@ paths:
         Use <a href="/docs/api/payment_intents/capture">Capture a
         PaymentIntent</a>.</p>
       tags:
-        - V1
-        - Charges
-        - Search
-        - Charge
         - Capture
+        - Charge
+        - Charges
+      summary: Create Charges Charge Capture
   /v1/charges/{charge}/dispute:
     get:
       description: <p>Retrieve a dispute for a specified charge.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
+        - Charges
+        - Disputes
+      summary: Retrieve Charges Charge Dispute
     post:
       description: ''
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
+        - Charges
+        - Disputes
+      summary: Create Charges Charge Dispute
   /v1/charges/{charge}/dispute/close:
     post:
       description: ''
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
+        - Charges
         - Close
+        - Disputes
+      summary: Create Charges Charge Dispute Close
   /v1/charges/{charge}/refund:
     post:
       description: >-
@@ -141,14 +132,10 @@ paths:
 
         or when you attempt to refund more money than is left on a charge.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
-        - Close
-        - Refund
+        - Charges
+        - Refunds
+      summary: Create Charges Charge Refund
   /v1/charges/{charge}/refunds:
     get:
       description: >-
@@ -158,15 +145,10 @@ paths:
         method and the <code>limit</code> and <code>starting_after</code>
         parameters to page through additional refunds.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
-        - Close
-        - Refund
+        - Charges
         - Refunds
+      summary: Retrieve Charges Charge Refunds
     post:
       description: >-
         <p>When you create a new refund, you must specify a Charge or a
@@ -193,37 +175,22 @@ paths:
 
         or when trying to refund more money than is left on a charge.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
-        - Close
-        - Refund
+        - Charges
         - Refunds
+      summary: Create Charges Charge Refunds
   /v1/charges/{charge}/refunds/{refund}:
     get:
       description: <p>Retrieves the details of an existing refund.</p>
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
-        - Close
-        - Refund
+        - Charges
         - Refunds
+      summary: Retrieve Charges Charge Refunds Refund
     post:
       description: <p>Update a specified r
       tags:
-        - V1
-        - Charges
-        - Search
         - Charge
-        - Capture
-        - Dispute
-        - Close
-        - Refund
-        - Refun
+        - Charges
+        - Refunds
+      summary: Create Charges Charge Refunds Refund
