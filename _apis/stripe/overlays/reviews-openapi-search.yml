@@ -10,22 +10,20 @@ paths:
         descending order by creation date, with the most recently created object
         appearing first.</p>
       tags:
-        - V1
         - Reviews
+      summary: Retrieve Reviews
   /v1/reviews/{review}:
     get:
       description: <p>Retrieves a <code>Review</code> object.</p>
       tags:
-        - V1
         - Reviews
-        - Review
+      summary: Retrieve Reviews Review
   /v1/reviews/{review}/approve:
     post:
       description: >-
         <p>Approves a <code>Review</code> object, closing it and removing it
         from the list of re
       tags:
-        - V1
+        - Approve
         - Reviews
-        - Review
-        - Appro
+      summary: Create Reviews Review Approve
