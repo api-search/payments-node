@@ -11,14 +11,13 @@ paths:
         attribute (not according to your current Stripe API version or
         <code>Stripe-Version</code> header).</p>
       tags:
-        - V1
         - Events
+      summary: Retrieve Events
   /v1/events/{id}:
     get:
       description: >-
         <p>Retrieves the details of an event. Supply the unique identifier of
         the event, which you might have received in a we
       tags:
-        - V1
         - Events
-        - null
+      summary: Retrieve Events Id
