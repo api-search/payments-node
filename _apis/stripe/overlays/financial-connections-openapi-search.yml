@@ -8,19 +8,20 @@ paths:
         <p>Returns a list of Financial Connections <code>Account</code>
         objects.</p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
+        - Connections
+        - Financial
+      summary: Retrieve Financial Connections Accounts
   /v1/financial_connections/accounts/{account}:
     get:
       description: >-
         <p>Retrieves the details of an Financial Connections
         <code>Account</code>.</p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
-        - Account
+        - Connections
+        - Financial
+      summary: Retrieve Financial Connections Accounts Account
   /v1/financial_connections/accounts/{account}/disconnect:
     post:
       description: >-
@@ -28,63 +29,53 @@ paths:
         You will no longer be able to access data associated with the account
         (e.g. balances, transactions).</p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
-        - Account
+        - Connections
         - Disconnect
+        - Financial
+      summary: Create Financial Connections Accounts Account Disconnect
   /v1/financial_connections/accounts/{account}/owners:
     get:
       description: <p>Lists all owners for a given <code>Account</code></p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
-        - Account
-        - Disconnect
+        - Connections
+        - Financial
         - Owners
+      summary: Retrieve Financial Connections Accounts Account Owners
   /v1/financial_connections/accounts/{account}/refresh:
     post:
       description: >-
         <p>Refreshes the data associated with a Financial Connections
         <code>Account</code>.</p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
-        - Account
-        - Disconnect
-        - Owners
+        - Connections
+        - Financial
         - Refresh
+      summary: Create Financial Connections Accounts Account Refresh
   /v1/financial_connections/accounts/{account}/subscribe:
     post:
       description: >-
         <p>Subscribes to periodic refreshes of data associated with a Financial
         Connections <code>Account</code>.</p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
-        - Account
-        - Disconnect
-        - Owners
-        - Refresh
+        - Connections
+        - Financial
         - Subscribe
+      summary: Create Financial Connections Accounts Account Subscribe
   /v1/financial_connections/accounts/{account}/unsubscribe:
     post:
       description: >-
         <p>Unsubscribes from periodic refreshes of data associated with a
         Financial Connections <code>Account</code>.</p>
       tags:
-        - V1
-        - Financial_connections
         - Accounts
-        - Account
-        - Disconnect
-        - Owners
-        - Refresh
-        - Subscribe
+        - Connections
+        - Financial
         - Unsubscribe
+      summary: Create Financial Connections Accounts Account Unsubscribe
   /v1/financial_connections/sessions:
     post:
       description: >-
@@ -92,65 +83,35 @@ paths:
         <code>Session</code>. The session’s <code>client_secret</code> can be
         used to launch the flow using Stripe.js.</p>
       tags:
-        - V1
-        - Financial_connections
-        - Accounts
-        - Account
-        - Disconnect
-        - Owners
-        - Refresh
-        - Subscribe
-        - Unsubscribe
+        - Connections
+        - Financial
         - Sessions
+      summary: Create Financial Connections Sessions
   /v1/financial_connections/sessions/{session}:
     get:
       description: >-
         <p>Retrieves the details of a Financial Connections
         <code>Session</code></p>
       tags:
-        - V1
-        - Financial_connections
-        - Accounts
-        - Account
-        - Disconnect
-        - Owners
-        - Refresh
-        - Subscribe
-        - Unsubscribe
+        - Connections
+        - Financial
         - Sessions
-        - Session
+      summary: Retrieve Financial Connections Sessions Session
   /v1/financial_connections/transactions:
     get:
       description: >-
         <p>Returns a list of Financial Connections <code>Transaction</code>
         objects.</p>
       tags:
-        - V1
-        - Financial_connections
-        - Accounts
-        - Account
-        - Disconnect
-        - Owners
-        - Refresh
-        - Subscribe
-        - Unsubscribe
-        - Sessions
-        - Session
+        - Connections
+        - Financial
         - Transactions
+      summary: Retrieve Financial Connections Transactions
   /v1/financial_connections/transactions/{transaction}:
     get:
       description: <p>Retrieves the details of a Financial Connections <code>Transaction<
       tags:
-        - V1
-        - Financial_connections
-        - Accounts
-        - Account
-        - Disconnect
-        - Owners
-        - Refresh
-        - Subscribe
-        - Unsubscribe
-        - Sessions
-        - Session
+        - Connections
+        - Financial
         - Transactions
-        - Transacti
+      summary: Retrieve Financial Connections Transactions Transaction
