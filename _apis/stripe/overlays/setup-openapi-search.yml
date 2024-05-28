@@ -8,15 +8,16 @@ paths:
         <p>Returns a list of SetupAttempts that associate with a provided
         SetupIntent.</p>
       tags:
-        - V1
-        - Setup_attempts
+        - Attempts
+        - Setup
+      summary: Retrieve Setup Attempts
   /v1/setup_intents:
     get:
       description: <p>Returns a list of SetupIntents.</p>
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
+        - Intents
+        - Setup
+      summary: Retrieve Setup Intents
     post:
       description: >-
         <p>Creates a SetupIntent object.</p>
@@ -28,9 +29,9 @@ paths:
         it to collect any required permissions to charge the payment method
         later.</p>
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
+        - Intents
+        - Setup
+      summary: Create Setup Intents
   /v1/setup_intents/{intent}:
     get:
       description: >-
@@ -47,17 +48,17 @@ paths:
         href="#setup_intent_object">SetupIntent</a> object reference for more
         details.</p>
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
         - Intent
+        - Intents
+        - Setup
+      summary: Retrieve Setup Intents Intent
     post:
       description: <p>Updates a SetupIntent object.</p>
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
         - Intent
+        - Intents
+        - Setup
+      summary: Create Setup Intents Intent
   /v1/setup_intents/{intent}/cancel:
     post:
       description: >-
@@ -70,11 +71,11 @@ paths:
         <p>After you cancel it, setup is abandoned and any operations on the
         SetupIntent fail with an error.</p>
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
-        - Intent
         - Cancel
+        - Intent
+        - Intents
+        - Setup
+      summary: Create Setup Intents Intent Cancel
   /v1/setup_intents/{intent}/confirm:
     post:
       description: >-
@@ -106,20 +107,18 @@ paths:
 
         confirmation limit is reached.</p>
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
-        - Intent
-        - Cancel
         - Confirm
+        - Intent
+        - Intents
+        - Setup
+      summary: Create Setup Intents Intent Confirm
   /v1/setup_intents/{intent}/verify_microdeposits:
     post:
       description: <p>Verifies microdeposits on a SetupIntent o
       tags:
-        - V1
-        - Setup_attempts
-        - Setup_intents
         - Intent
-        - Cancel
-        - Confirm
-        - Verify_microdeposi
+        - Intents
+        - Microdeposits
+        - Setup
+        - Verify
+      summary: Create Setup Intents Intent Verify Microdeposits
