@@ -6,9 +6,11 @@ paths:
     get:
       description: <p>Returns a list of early fraud warnings.</p>
       tags:
-        - V1
+        - Early
+        - Fraud
         - Radar
-        - Early_fraud_warnings
+        - Warnings
+      summary: Retrieve Radar Early Fraud Warnings
   /v1/radar/early_fraud_warnings/{early_fraud_warning}:
     get:
       description: >-
@@ -19,10 +21,12 @@ paths:
         <p>Please refer to the <a href="#early_fraud_warning_object">early fraud
         warning</a> object reference for more details.</p>
       tags:
-        - V1
+        - Early
+        - Fraud
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
+        - Warning
+        - Warnings
+      summary: Retrieve Radar Early Fraud Warnings Early Fraud Warning
   /v1/radar/value_list_items:
     get:
       description: >-
@@ -30,42 +34,36 @@ paths:
         sorted in descending order by creation date, with the most recently
         created object appearing first.</p>
       tags:
-        - V1
+        - Items
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
+        - Value
+      summary: Retrieve Radar Value List Items
     post:
       description: >-
         <p>Creates a new <code>ValueListItem</code> object, which is added to
         the specified parent value list.</p>
       tags:
-        - V1
+        - Items
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
+        - Value
+      summary: Create Radar Value List Items
   /v1/radar/value_list_items/{item}:
     delete:
       description: >-
         <p>Deletes a <code>ValueListItem</code> object, removing it from its
         parent value list.</p>
       tags:
-        - V1
+        - Items
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
+        - Value
+      summary: Delete Radar Value List Items Item
     get:
       description: <p>Retrieves a <code>ValueListItem</code> object.</p>
       tags:
-        - V1
+        - Items
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
+        - Value
+      summary: Retrieve Radar Value List Items Item
   /v1/radar/value_lists:
     get:
       description: >-
@@ -73,25 +71,17 @@ paths:
         sorted in descending order by creation date, with the most recently
         created object appearing first.</p>
       tags:
-        - V1
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
-        - Value_lists
+        - Value
+      summary: Retrieve Radar Value Lists
     post:
       description: >-
         <p>Creates a new <code>ValueList</code> object, which can then be
         referenced in rules.</p>
       tags:
-        - V1
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
-        - Value_lists
+        - Value
+      summary: Create Radar Value Lists
   /v1/radar/value_lists/{value_list}:
     delete:
       description: >-
@@ -99,36 +89,21 @@ paths:
         contained within the value list. To be deleted, a value list must not be
         referenced in any rules.</p>
       tags:
-        - V1
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
-        - Value_lists
-        - Value_list
+        - Value
+      summary: Delete Radar Value Lists Value List
     get:
       description: <p>Retrieves a <code>ValueList</code> object.</p>
       tags:
-        - V1
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
-        - Value_lists
-        - Value_list
+        - Value
+      summary: Retrieve Radar Value Lists Value List
     post:
       description: >-
         <p>Updates a <code>ValueList</code> object by setting the values of the
         parameters passed. Any parameters not provided will be left unchanged.
         Note that <code>item_type</code> is immu
       tags:
-        - V1
         - Radar
-        - Early_fraud_warnings
-        - Early_fraud_warning
-        - Value_list_items
-        - Item
-        - Value_lists
-        - Value_li
+        - Value
+      summary: Create Radar Value Lists Value List
