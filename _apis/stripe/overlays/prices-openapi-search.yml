@@ -10,15 +10,15 @@ paths:
         prices</a>. For the list of inactive prices, set <code>active</code> to
         false.</p>
       tags:
-        - V1
         - Prices
+      summary: Retrieve Prices
     post:
       description: >-
         <p>Creates a new price for an existing product. The price can be
         recurring or one-time.</p>
       tags:
-        - V1
         - Prices
+      summary: Create Prices
   /v1/prices/search:
     get:
       description: >-
@@ -34,23 +34,19 @@ paths:
         to an hour behind during outages. Search functionality is not available
         to merchants in India.</p>
       tags:
-        - V1
         - Prices
         - Search
+      summary: Retrieve Prices Search
   /v1/prices/{price}:
     get:
       description: <p>Retrieves the price with the given ID.</p>
       tags:
-        - V1
         - Prices
-        - Search
-        - Price
+      summary: Retrieve Prices Price
     post:
       description: >-
         <p>Updates the specified price by setting the values of the parameters
         passed. Any parameters not provided are left unch
       tags:
-        - V1
         - Prices
-        - Search
-        - Pri
+      summary: Create Prices Price
