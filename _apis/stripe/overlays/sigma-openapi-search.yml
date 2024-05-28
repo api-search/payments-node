@@ -6,14 +6,15 @@ paths:
     get:
       description: <p>Returns a list of scheduled query runs.</p>
       tags:
-        - V1
-        - Sigma
-        - Scheduled_query_runs
+        - Queries
+        - Runs
+        - Scheduled
+      summary: Retrieve Sigma Scheduled Query Runs
   /v1/sigma/scheduled_query_runs/{scheduled_query_run}:
     get:
       description: <p>Retrieves the details of an scheduled que
       tags:
-        - V1
-        - Sigma
-        - Scheduled_query_runs
-        - Scheduled_query_r
+        - Queries
+        - Runs
+        - Scheduled
+      summary: Retrieve Sigma Scheduled Query Runs Scheduled Query Run
