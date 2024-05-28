@@ -6,8 +6,8 @@ paths:
     get:
       description: <p>Returns a list of your coupons.</p>
       tags:
-        - V1
         - Coupons
+      summary: Retrieve Coupons
     post:
       description: >-
         <p>You can create coupons easily via the <a
@@ -27,8 +27,8 @@ paths:
         <currency>100</currency> if a coupon with an <code>amount_off</code> of
         <amount>200</amount> is applied to it.</p>
       tags:
-        - V1
         - Coupons
+      summary: Create Coupons
   /v1/coupons/{coupon}:
     delete:
       description: >-
@@ -39,20 +39,17 @@ paths:
         customers can’t redeem the coupon. You can also delete coupons via the
         API.</p>
       tags:
-        - V1
         - Coupons
-        - Coupon
+      summary: Delete Coupons Coupon
     get:
       description: <p>Retrieves the coupon with the given ID.</p>
       tags:
-        - V1
         - Coupons
-        - Coupon
+      summary: Retrieve Coupons Coupon
     post:
       description: >-
         <p>Updates the metadata of a coupon. Other coupon details (currency,
         duration, amount_off) are, by design, not edi
       tags:
-        - V1
         - Coupons
-        - Coup
+      summary: Create Coupons Coupon
