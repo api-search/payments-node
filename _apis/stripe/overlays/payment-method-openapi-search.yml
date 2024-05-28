@@ -6,58 +6,62 @@ paths:
     get:
       description: <p>List payment method configurations</p>
       tags:
-        - V1
-        - Payment_method_configurations
+        - Configurations
+        - Methods
+        - Payments
+      summary: Retrieve Payment Method Configurations
     post:
       description: <p>Creates a payment method configuration</p>
       tags:
-        - V1
-        - Payment_method_configurations
+        - Configurations
+        - Methods
+        - Payments
+      summary: Create Payment Method Configurations
   /v1/payment_method_configurations/{configuration}:
     get:
       description: <p>Retrieve payment method configuration</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
+        - Configurations
+        - Methods
+        - Payments
+      summary: Retrieve Payment Method Configurations Configuration
     post:
       description: <p>Update payment method configuration</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
+        - Configurations
+        - Methods
+        - Payments
+      summary: Create Payment Method Configurations Configuration
   /v1/payment_method_domains:
     get:
       description: <p>Lists the details of existing payment method domains.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
+        - Domains
+        - Methods
+        - Payments
+      summary: Retrieve Payment Method Domains
     post:
       description: <p>Creates a payment method domain.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
+        - Domains
+        - Methods
+        - Payments
+      summary: Create Payment Method Domains
   /v1/payment_method_domains/{payment_method_domain}:
     get:
       description: <p>Retrieves the details of an existing payment method domain.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
+        - Domains
+        - Methods
+        - Payments
+      summary: Retrieve Payment Method Domains Payment Method Domain
     post:
       description: <p>Updates an existing payment method domain.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
+        - Domains
+        - Methods
+        - Payments
+      summary: Create Payment Method Domains Payment Method Domain
   /v1/payment_method_domains/{payment_method_domain}/validate:
     post:
       description: >-
@@ -78,12 +82,13 @@ paths:
         href="/docs/payments/payment-methods/pmd-registration">Payment method
         domains</a>.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
+        - Ate
+        - Domains
+        - Methods
+        - Payments
+        - Val
         - Validate
+      summary: Create Payment Method Domains Payment Method Domain Validate
   /v1/payment_methods:
     get:
       description: >-
@@ -92,13 +97,9 @@ paths:
         use the <a href="/docs/api/payment_methods/customer_list">List a
         Customer’s PaymentMethods</a> API instead.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
-        - Validate
-        - Payment_methods
+        - Methods
+        - Payments
+      summary: Retrieve Payment Methods
     post:
       description: >-
         <p>Creates a PaymentMethod object. Read the <a
@@ -112,13 +113,9 @@ paths:
         href="/docs/payments/save-and-reuse">SetupIntent</a> API to collect
         payment method details ahead of a future payment.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
-        - Validate
-        - Payment_methods
+        - Methods
+        - Payments
+      summary: Create Payment Methods
   /v1/payment_methods/{payment_method}:
     get:
       description: >-
@@ -127,27 +124,17 @@ paths:
         href="/docs/api/payment_methods/customer">Retrieve a Customer’s
         PaymentMethods</a></p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
-        - Validate
-        - Payment_methods
-        - Payment_method
+        - Methods
+        - Payments
+      summary: Retrieve Payment Methods Payment Method
     post:
       description: >-
         <p>Updates a PaymentMethod object. A PaymentMethod must be attached a
         customer to be updated.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
-        - Validate
-        - Payment_methods
-        - Payment_method
+        - Methods
+        - Payments
+      summary: Create Payment Methods Payment Method
   /v1/payment_methods/{payment_method}/attach:
     post:
       description: >-
@@ -183,15 +170,10 @@ paths:
 
         on the Customer to the PaymentMethod’s ID.</p>
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
-        - Validate
-        - Payment_methods
-        - Payment_method
         - Attach
+        - Methods
+        - Payments
+      summary: Create Payment Methods Payment Method Attach
   /v1/payment_methods/{payment_method}/detach:
     post:
       description: >-
@@ -199,13 +181,7 @@ paths:
         PaymentMethod is detached, it can no longer be used for a payment or
         re-attached to a Cus
       tags:
-        - V1
-        - Payment_method_configurations
-        - Configuration
-        - Payment_method_domains
-        - Payment_method_domain
-        - Validate
-        - Payment_methods
-        - Payment_method
-        - Attach
-        - Deta
+        - Detach
+        - Methods
+        - Payments
+      summary: Create Payment Methods Payment Method Detach
