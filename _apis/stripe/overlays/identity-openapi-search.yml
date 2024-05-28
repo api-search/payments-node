@@ -6,26 +6,29 @@ paths:
     get:
       description: <p>List all verification reports.</p>
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
+        - Reports
+        - Verification
+      summary: Retrieve Identity Verification Reports
   /v1/identity/verification_reports/{report}:
     get:
       description: <p>Retrieves an existing VerificationReport</p>
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
-        - Report
+        - Reports
+        - Verification
+      summary: Retrieve Identity Verification Reports Report
   /v1/identity/verification_sessions:
     get:
       description: <p>Returns a list of VerificationSessions</p>
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
-        - Report
-        - Verification_sessions
+        - Sessions
+        - Verification
+      summary: Retrieve Identity Verification Sessions
     post:
       description: >-
         <p>Creates a VerificationSession object.</p>
@@ -44,11 +47,11 @@ paths:
         href="/docs/identity/verify-identity-documents">Verify your users’
         identity documents</a></p>
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
-        - Report
-        - Verification_sessions
+        - Sessions
+        - Verification
+      summary: Create Identity Verification Sessions
   /v1/identity/verification_sessions/{session}:
     get:
       description: >-
@@ -62,12 +65,11 @@ paths:
         <code>client_secret</code> or <code>url</code> to allow
         re-submission.</p>
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
-        - Report
-        - Verification_sessions
-        - Session
+        - Sessions
+        - Verification
+      summary: Retrieve Identity Verification Sessions Session
     post:
       description: >-
         <p>Updates a VerificationSession object.</p>
@@ -78,12 +80,11 @@ paths:
 
         verification check and options.</p>
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
-        - Report
-        - Verification_sessions
-        - Session
+        - Sessions
+        - Verification
+      summary: Create Identity Verification Sessions Session
   /v1/identity/verification_sessions/{session}/cancel:
     post:
       description: >-
@@ -96,13 +97,12 @@ paths:
         be undone. <a href="/docs/identity/verification-sessions#cancel">Learn
         more</a>.</p>
       tags:
-        - V1
-        - Identity
-        - Verification_reports
-        - Report
-        - Verification_sessions
-        - Session
         - Cancel
+        - Entities
+        - Identity
+        - Sessions
+        - Verification
+      summary: Create Identity Verification Sessions Session Cancel
   /v1/identity/verification_sessions/{session}/redact:
     post:
       description: >-
@@ -150,11 +150,9 @@ paths:
 
         <p><a href="/docs/identity/verification-sessions#redact">Learn mor
       tags:
-        - V1
+        - Entities
         - Identity
-        - Verification_reports
-        - Report
-        - Verification_sessions
-        - Session
-        - Cancel
-        - Reda
+        - Redact
+        - Sessions
+        - Verification
+      summary: Create Identity Verification Sessions Session Redact
