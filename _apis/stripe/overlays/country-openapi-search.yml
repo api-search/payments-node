@@ -6,12 +6,13 @@ paths:
     get:
       description: <p>Lists all Country Spec objects available in the API.</p>
       tags:
-        - V1
-        - Country_specs
+        - Countries
+        - Specs
+      summary: Retrieve Country Specs
   /v1/country_specs/{country}:
     get:
       description: <p>Returns a Country Spec for a given Country
       tags:
-        - V1
-        - Country_specs
-        - Count
+        - Countries
+        - Specs
+      summary: Retrieve Country Specs Country
