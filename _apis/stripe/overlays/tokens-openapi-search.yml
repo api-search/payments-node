@@ -11,12 +11,11 @@ paths:
         dictionary. You can only use this token once. To do so, attach it to a
         <a href="#accounts">Custom account</a>.</p>
       tags:
-        - V1
         - Tokens
+      summary: Create Tokens
   /v1/tokens/{token}:
     get:
       description: <p>Retrieves the token with the giv
       tags:
-        - V1
         - Tokens
-        - Tok
+      summary: Retrieve Tokens Token
