@@ -10,9 +10,9 @@ paths:
 
         most recently created orders appearing first.</p>
       tags:
-        - V1
         - Climate
         - Orders
+      summary: Retrieve Climate Orders
     post:
       description: >-
         <p>Creates a Climate order object for a given Climate product. The order
@@ -20,28 +20,26 @@ paths:
 
         after creation and payment will be deducted your Stripe balance.</p>
       tags:
-        - V1
         - Climate
         - Orders
+      summary: Create Climate Orders
   /v1/climate/orders/{order}:
     get:
       description: >-
         <p>Retrieves the details of a Climate order object with the given
         ID.</p>
       tags:
-        - V1
         - Climate
         - Orders
-        - Order
+      summary: Retrieve Climate Orders Order
     post:
       description: >-
         <p>Updates the specified order by setting the values of the parameters
         passed.</p>
       tags:
-        - V1
         - Climate
         - Orders
-        - Order
+      summary: Create Climate Orders Order
   /v1/climate/orders/{order}/cancel:
     post:
       description: >-
@@ -57,32 +55,24 @@ paths:
         provides 90 days advance notice and refunds the
         <code>amount_total</code>.</p>
       tags:
-        - V1
+        - Cancel
         - Climate
         - Orders
-        - Order
-        - Cancel
+      summary: Create Climate Orders Order Cancel
   /v1/climate/products:
     get:
       description: <p>Lists all available Climate product objects.</p>
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
         - Products
+      summary: Retrieve Climate Products
   /v1/climate/products/{product}:
     get:
       description: <p>Retrieves the details of a Climate product with the given ID.</p>
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
         - Products
-        - Product
+      summary: Retrieve Climate Products Product
   /v1/climate/reservations:
     get:
       description: >-
@@ -91,14 +81,9 @@ paths:
 
         most recently created orders appearing first.</p>
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
         - Reservations
+      summary: Retrieve Climate Reservations
     post:
       description: >-
         <p>Creates a Climate order object for a given Climate product. The order
@@ -106,41 +91,28 @@ paths:
 
         after creation and payment will be deducted your Stripe balance.</p>
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
         - Reservations
+      summary: Create Climate Reservations
   /v1/climate/reservations/{order}:
     get:
       description: >-
         <p>Retrieves the details of a Climate order object with the given
         ID.</p>
       tags:
-        - V1
         - Climate
         - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
         - Reservations
+      summary: Retrieve Climate Reservations Order
     post:
       description: >-
         <p>Updates the specified order by setting the values of the parameters
         passed.</p>
       tags:
-        - V1
         - Climate
         - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
         - Reservations
+      summary: Create Climate Reservations Order
   /v1/climate/reservations/{order}/cancel:
     post:
       description: >-
@@ -156,14 +128,11 @@ paths:
         provides 90 days advance notice and refunds the
         <code>amount_total</code>.</p>
       tags:
-        - V1
+        - Cancel
         - Climate
         - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
         - Reservations
+      summary: Create Climate Reservations Order Cancel
   /v1/climate/reservations/{order}/confirm:
     post:
       description: >-
@@ -172,41 +141,23 @@ paths:
 
         Stripe balance.</p>
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
-        - Reservations
         - Confirm
+        - Orders
+        - Reservations
+      summary: Create Climate Reservations Order Confirm
   /v1/climate/suppliers:
     get:
       description: <p>Lists all available Climate supplier objects.</p>
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
-        - Reservations
-        - Confirm
         - Suppliers
+      summary: Retrieve Climate Suppliers
   /v1/climate/suppliers/{supplier}:
     get:
       description: <p>Retrieves a Climate supplier o
       tags:
-        - V1
         - Climate
-        - Orders
-        - Order
-        - Cancel
-        - Products
-        - Product
-        - Reservations
-        - Confirm
+        - Supplier
         - Suppliers
-        - Suppli
+      summary: Retrieve Climate Suppliers Supplier
