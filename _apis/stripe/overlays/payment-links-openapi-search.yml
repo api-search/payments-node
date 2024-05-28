@@ -6,26 +6,30 @@ paths:
     get:
       description: <p>Returns a list of your payment links.</p>
       tags:
-        - V1
-        - Payment_links
+        - Links
+        - Payments
+      summary: Retrieve Payment Links
     post:
       description: <p>Creates a payment link.</p>
       tags:
-        - V1
-        - Payment_links
+        - Links
+        - Payments
+      summary: Create Payment Links
   /v1/payment_links/{payment_link}:
     get:
       description: <p>Retrieve a payment link.</p>
       tags:
-        - V1
-        - Payment_links
-        - Payment_link
+        - Link
+        - Links
+        - Payments
+      summary: Retrieve Payment Links Payment Link
     post:
       description: <p>Updates a payment link.</p>
       tags:
-        - V1
-        - Payment_links
-        - Payment_link
+        - Link
+        - Links
+        - Payments
+      summary: Create Payment Links Payment Link
   /v1/payment_links/{payment_link}/line_items:
     get:
       description: >-
@@ -34,7 +38,9 @@ paths:
         those items. There is also a URL where you can retrieve the full
         (paginated) list of line 
       tags:
-        - V1
-        - Payment_links
-        - Payment_link
-        - Line_ite
+        - Items
+        - Line
+        - Link
+        - Links
+        - Payments
+      summary: Retrieve Payment Links Payment Link Line Items
