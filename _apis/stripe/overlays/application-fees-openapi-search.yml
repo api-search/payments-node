@@ -9,8 +9,9 @@ paths:
         application fees are returned in sorted order, with the most recent fees
         appearing first.</p>
       tags:
-        - V1
-        - Application_fees
+        - Applications
+        - Fees
+      summary: Retrieve Application Fees
   /v1/application_fees/{fee}/refunds/{id}:
     get:
       description: >-
@@ -18,11 +19,11 @@ paths:
         the application fee object, but you can also retrieve details about a
         specific refund stored on the application fee.</p>
       tags:
-        - V1
-        - Application_fees
+        - Applications
         - Fee
+        - Fees
         - Refunds
-        - Id
+      summary: Retrieve Application Fees Fee Refunds Id
     post:
       description: >-
         <p>Updates the specified application fee refund by setting the values of
@@ -32,11 +33,11 @@ paths:
 
         <p>This request only accepts metadata as an argument.</p>
       tags:
-        - V1
-        - Application_fees
+        - Applications
         - Fee
+        - Fees
         - Refunds
-        - Id
+      summary: Create Application Fees Fee Refunds Id
   /v1/application_fees/{id}:
     get:
       description: >-
@@ -44,21 +45,17 @@ paths:
         collected. The same information is returned when refunding the
         application fee.</p>
       tags:
-        - V1
-        - Application_fees
-        - Fee
-        - Refunds
-        - Id
+        - Applications
+        - Fees
+      summary: Retrieve Application Fees Id
   /v1/application_fees/{id}/refund:
     post:
       description: ''
       tags:
-        - V1
-        - Application_fees
-        - Fee
+        - Applications
+        - Fees
         - Refunds
-        - Id
-        - Refund
+      summary: Create Application Fees Id Refund
   /v1/application_fees/{id}/refunds:
     get:
       description: >-
@@ -69,12 +66,10 @@ paths:
         <code>starting_after</code> parameters to page through additional
         refunds.</p>
       tags:
-        - V1
-        - Application_fees
-        - Fee
+        - Applications
+        - Fees
         - Refunds
-        - Id
-        - Refund
+      summary: Retrieve Application Fees Id Refunds
     post:
       description: >-
         <p>Refunds an application fee that has previously been collected but not
@@ -97,9 +92,7 @@ paths:
 
         or when trying to refund more money than is left on an applicatio
       tags:
-        - V1
-        - Application_fees
-        - Fee
+        - Applications
+        - Fees
         - Refunds
-        - Id
-        - Refu
+      summary: Create Application Fees Id Refunds
