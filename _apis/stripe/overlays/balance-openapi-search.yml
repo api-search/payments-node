@@ -9,8 +9,8 @@ paths:
         that was used to make the request.
          For a sample request, see <a href="/docs/connect/account-balances#accounting-for-negative-balances">Accounting for negative balances</a>.</p>
       tags:
-        - V1
         - Balance
+      summary: Retrieve Balance
   /v1/balance/history:
     get:
       description: >-
@@ -23,9 +23,9 @@ paths:
         <p>Note that this endpoint was previously called “Balance history” and
         used the path <code>/v1/balance/history</code>.</p>
       tags:
-        - V1
         - Balance
         - History
+      summary: Retrieve Balance History
   /v1/balance/history/{id}:
     get:
       description: >-
@@ -35,10 +35,9 @@ paths:
         <p>Note that this endpoint previously used the path
         <code>/v1/balance/history/:id</code>.</p>
       tags:
-        - V1
         - Balance
         - History
-        - Id
+      summary: Retrieve Balance History Id
   /v1/balance_transactions:
     get:
       description: >-
@@ -51,11 +50,9 @@ paths:
         <p>Note that this endpoint was previously called “Balance history” and
         used the path <code>/v1/balance/history</code>.</p>
       tags:
-        - V1
         - Balance
-        - History
-        - Id
-        - Balance_transactions
+        - Transactions
+      summary: Retrieve Balance Transactions
   /v1/balance_transactions/{id}:
     get:
       description: >-
@@ -65,8 +62,6 @@ paths:
         <p>Note that this endpoint previously used the path
         <code>/v1/balance/history/:id</
       tags:
-        - V1
         - Balance
-        - History
-        - Id
-        - Balance_transactio
+        - Transactions
+      summary: Retrieve Balance Transactions Id
