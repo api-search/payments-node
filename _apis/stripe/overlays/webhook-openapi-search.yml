@@ -6,8 +6,9 @@ paths:
     get:
       description: <p>Returns a list of your webhook endpoints.</p>
       tags:
-        - V1
-        - Webhook_endpoints
+        - Endpoints
+        - Webhooks
+      summary: Retrieve Webhook Endpoints
     post:
       description: >-
         <p>A webhook endpoint must have a <code>url</code> and a list of
@@ -20,8 +21,9 @@ paths:
         href="https://dashboard.stripe.com/account/webhooks">webhooks
         settings</a> section of the Dashboard.</p>
       tags:
-        - V1
-        - Webhook_endpoints
+        - Endpoints
+        - Webhooks
+      summary: Create Webhook Endpoints
   /v1/webhook_endpoints/{webhook_endpoint}:
     delete:
       description: >-
@@ -29,20 +31,20 @@ paths:
         href="https://dashboard.stripe.com/account/webhooks">webhook endpoint
         management</a> page of the Stripe dashboard.</p>
       tags:
-        - V1
-        - Webhook_endpoints
-        - Webhook_endpoint
+        - Endpoints
+        - Webhooks
+      summary: Delete Webhook Endpoints Webhook Endpoint
     get:
       description: <p>Retrieves the webhook endpoint with the given ID.</p>
       tags:
-        - V1
-        - Webhook_endpoints
-        - Webhook_endpoint
+        - Endpoints
+        - Webhooks
+      summary: Retrieve Webhook Endpoints Webhook Endpoint
     post:
       description: >-
         <p>Updates the webhook endpoint. You may edit the <code>url</code>, the
         list of <code>enabled_events</code>, and the status of your end
       tags:
-        - V1
-        - Webhook_endpoints
-        - Webhook_endpoi
+        - Endpoints
+        - Webhooks
+      summary: Create Webhook Endpoints Webhook Endpoint
