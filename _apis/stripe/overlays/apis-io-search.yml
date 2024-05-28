@@ -16,7 +16,18 @@ apis:
       This is an object representing a Stripe account. You can retrieve it to
       see properties on the account like its current requirements or if the
       account is enabled to make live charges or receive payouts.
-    tags: []
+    tags:
+      - Accounts
+      - Bank
+      - Capabilities
+      - External
+      - Links
+      - Login
+      - People
+      - Person
+      - Persons
+      - Reject
+      - Sessions
     overlays:
       - type: APIs.io Search
         url: overlays/accounts-openapi-search.yml
@@ -29,7 +40,10 @@ apis:
       and on the web in Safari starting with iOS 10 or macOS Sierra. There are
       no additional fees to process Apple Pay payments, and the pricing is the
       same as other card transactions.
-    tags: []
+    tags:
+      - Apple
+      - Domains
+      - Pay
     overlays:
       - type: APIs.io Search
         url: overlays/apple-pay-openapi-search.yml
@@ -41,7 +55,11 @@ apis:
       When you collect a transaction fee on top of a charge made for your user
       (using Connect), an Application Fee object is created in your account. You
       can list, retrieve, and refund application fees.
-    tags: []
+    tags:
+      - Applications
+      - Fees
+      - Fee
+      - Refunds
     overlays:
       - type: APIs.io Search
         url: overlays/application-fees-openapi-search.yml
@@ -52,7 +70,10 @@ apis:
     description: >-
       Secret Store is an API that allows Stripe Apps developers to securely
       persist secrets for use by UI Extensions and app backends.
-    tags: []
+    tags:
+      - Applications
+      - Secrets
+      - Find
     overlays:
       - type: APIs.io Search
         url: overlays/application-secrets-openapi-search.yml
@@ -65,7 +86,10 @@ apis:
       see the balance currently on your Stripe account. You can also retrieve
       the balance history, which contains a list of transactions that
       contributed to the balance (charges, payouts, and so forth).
-    tags: []
+    tags:
+      - Balance
+      - History
+      - Transactions
     overlays:
       - type: APIs.io Search
         url: overlays/balance-openapi-search.yml
@@ -76,7 +100,11 @@ apis:
     description: >-
       Create and manage subscriptions, recurring payments, and recurring
       revenue.
-    tags: []
+    tags:
+      - Billing
+      - Configurations
+      - Portals
+      - Sessions
     overlays:
       - type: APIs.io Search
         url: overlays/billing-openapi-search.yml
@@ -90,7 +118,14 @@ apis:
       create Charges, but transferring money to a different Stripe account
       through Connect also creates Charges. Some legacy payment flows create
       Charges directly, which is not recommended for new integrations.
-    tags: []
+    tags:
+      - Charges
+      - Search
+      - Charge
+      - Capture
+      - Disputes
+      - Close
+      - Refunds
     overlays:
       - type: APIs.io Search
         url: overlays/charges-openapi-search.yml
@@ -104,7 +139,12 @@ apis:
       website or redirect customers to a Stripe-hosted payment page. It supports
       one-time payments and subscriptions and accepts over 40 local payment
       methods.
-    tags: []
+    tags:
+      - Checkout
+      - Sessions
+      - Expire
+      - Items
+      - Line
     overlays:
       - type: APIs.io Search
         url: overlays/checkout-openapi-search.yml
@@ -116,7 +156,15 @@ apis:
       Stripe Climate is the easiest way to help promising permanent carbon
       removal technologies launch and scale. Join a growing group of ambitious
       businesses that are changing the course of carbon removal.
-    tags: []
+    tags:
+      - Climate
+      - Orders
+      - Cancel
+      - Products
+      - Reservations
+      - Confirm
+      - Suppliers
+      - Supplier
     overlays:
       - type: APIs.io Search
         url: overlays/climate-openapi-search.yml
@@ -128,7 +176,9 @@ apis:
       Stripe needs to collect certain pieces of information about each account
       created. These requirements can differ depending on the account’s country.
       The Country Specs API makes these rules available to your integration.
-    tags: []
+    tags:
+      - Countries
+      - Specs
     overlays:
       - type: APIs.io Search
         url: overlays/country-openapi-search.yml
@@ -141,7 +191,8 @@ apis:
       you might want to apply to a customer. Coupons may be applied to
       subscriptions, invoices, checkout sessions, quotes, and more. Coupons do
       not work with conventional one-off charges or payment intents.
-    tags: []
+    tags:
+      - Coupons
     overlays:
       - type: APIs.io Search
         url: overlays/coupons-openapi-search.yml
@@ -152,7 +203,11 @@ apis:
     description: >-
       Issue a credit note to adjust an invoice’s amount after the invoice is
       finalized.
-    tags: []
+    tags:
+      - Credit
+      - Notes
+      - Previews
+      - Lines
     overlays:
       - type: APIs.io Search
         url: overlays/credit-notes-openapi-search.yml
@@ -163,7 +218,26 @@ apis:
     description: >-
       This object represents a customer of your business. Use it to create
       recurring charges and track payments that belong to the same customer.
-    tags: []
+    tags:
+      - Customers
+      - Search
+      - Balance
+      - Transactions
+      - Accounts
+      - Bank
+      - Verify
+      - Cards
+      - Cash
+      - Discount
+      - Funding
+      - Instructions
+      - Methods
+      - Payments
+      - Sources
+      - Subscriptions
+      - Exposed
+      - Ids
+      - Taxes
     overlays:
       - type: APIs.io Search
         url: overlays/customers-openapi-search.yml
@@ -175,7 +249,9 @@ apis:
       A dispute occurs when a customer questions your charge with their card
       issuer. When this happens, you have the opportunity to respond to the
       dispute with evidence that shows that the charge is legitimate.
-    tags: []
+    tags:
+      - Disputes
+      - Close
     overlays:
       - type: APIs.io Search
         url: overlays/disputes-openapi-search.yml
@@ -187,7 +263,9 @@ apis:
       Stripe.js uses ephemeral keys to securely retrieve Card information from
       the Stripe API without publicly exposing your secret keys. You need to do
       some of the ephemeral key exchange on the server-side to set this up.
-    tags: []
+    tags:
+      - Ephemeral
+      - Keys
     overlays:
       - type: APIs.io Search
         url: overlays/ephemeral-keys-openapi-search.yml
@@ -199,7 +277,8 @@ apis:
       Events are our way of letting you know when something interesting happens
       in your account. When an interesting event occurs, we create a new Event
       object.
-    tags: []
+    tags:
+      - Events
     overlays:
       - type: APIs.io Search
         url: overlays/events-openapi-search.yml
@@ -213,7 +292,9 @@ apis:
       and help customers avoid conversion costs. In order to present prices in
       your customer’s currency, you need to specify the presentment currency
       when creating a PaymentIntent or a charge.
-    tags: []
+    tags:
+      - Exchange
+      - Rates
     overlays:
       - type: APIs.io Search
         url: overlays/exchange-rates-openapi-search.yml
@@ -226,7 +307,9 @@ apis:
       files with the create file request (for example, when uploading dispute
       evidence). Stripe also creates files independently (for example, the
       results of a Sigma scheduled query).
-    tags: []
+    tags:
+      - Files
+      - File
     overlays:
       - type: APIs.io Search
         url: overlays/files-openapi-search.yml
@@ -240,7 +323,17 @@ apis:
       Connections to access user-permissioned account data such as tokenized
       account and routing numbers, balances, ownerships details, and
       transactions.
-    tags: []
+    tags:
+      - Accounts
+      - Connections
+      - Financial
+      - Disconnect
+      - Owners
+      - Refresh
+      - Subscribe
+      - Unsubscribe
+      - Sessions
+      - Transactions
     overlays:
       - type: APIs.io Search
         url: overlays/financial-connections-openapi-search.yml
@@ -251,7 +344,14 @@ apis:
     description: >-
       Use Stripe Identity to confirm the identity of global users to prevent
       fraud, streamline risk operations, and increase trust and safety.
-    tags: []
+    tags:
+      - Entities
+      - Identity
+      - Reports
+      - Verification
+      - Sessions
+      - Cancel
+      - Redact
     overlays:
       - type: APIs.io Search
         url: overlays/identity-openapi-search.yml
@@ -262,7 +362,19 @@ apis:
     description: >-
       Invoices are statements of amounts owed by a customer, and are either
       generated one-off, or generated periodically from a subscription.
-    tags: []
+    tags:
+      - Invoice Items
+      - Invoices
+      - Search
+      - Upcoming
+      - Lines
+      - Finalize
+      - Items
+      - Line
+      - Mark
+      - Uncollectible
+      - Pay
+      - Send
     overlays:
       - type: APIs.io Search
         url: overlays/invoice-openapi-search.yml
@@ -273,7 +385,18 @@ apis:
     description: >-
       An API for businesses to instantly create, manage, and distribute payment
       cards.
-    tags: []
+    tags:
+      - Authorization
+      - Issuing
+      - Approve
+      - Decline
+      - Card Holders
+      - Cards
+      - Disputes
+      - Submit
+      - Settlements
+      - Tokens
+      - Transactions
     overlays:
       - type: APIs.io Search
         url: overlays/issuing-openapi-search.yml
@@ -285,7 +408,14 @@ apis:
       You can use the Payment Links API to create a payment link that you can
       share with your customers. Stripe redirects customers who open this link
       to a Stripe-hosted payment page.
-    tags: []
+    tags:
+      - Accounts
+      - Link
+      - Sessions
+      - Linked
+      - Disconnect
+      - Owners
+      - Refresh
     overlays:
       - type: APIs.io Search
         url: overlays/link-openapi-search.yml
@@ -299,7 +429,20 @@ apis:
       for each order or customer session in your system. You can reference the
       PaymentIntent later to see the history of payment attempts for a
       particular session.
-    tags: []
+    tags:
+      - Intents
+      - Payments
+      - Search
+      - Intent
+      - Balance
+      - Customers
+      - Cancel
+      - Capture
+      - Confirm
+      - Authorization
+      - Increment
+      - Microdeposits
+      - Verify
     overlays:
       - type: APIs.io Search
         url: overlays/payment-intents-openapi-search.yml
@@ -313,7 +456,12 @@ apis:
       When a customer opens a payment link it will open a new checkout session
       to render the payment page. You can use checkout session events to track
       payments through payment links.
-    tags: []
+    tags:
+      - Links
+      - Payments
+      - Link
+      - Items
+      - Line
     overlays:
       - type: APIs.io Search
         url: overlays/payment-links-openapi-search.yml
@@ -325,7 +473,16 @@ apis:
       The Payment Methods API allows you to accept a variety of payment methods
       through a single API. A PaymentMethod object contains the payment method
       details to create payments.
-    tags: []
+    tags:
+      - Configurations
+      - Methods
+      - Payments
+      - Domains
+      - Ate
+      - Val
+      - Validate
+      - Attach
+      - Detach
     overlays:
       - type: APIs.io Search
         url: overlays/payment-method-openapi-search.yml
@@ -339,7 +496,10 @@ apis:
       Stripe account. You can retrieve individual payouts, and list all payouts.
       Payouts are made on varying schedules, depending on your country and
       industry.
-    tags: []
+    tags:
+      - Payouts
+      - Cancel
+      - Reverse
     overlays:
       - type: APIs.io Search
         url: overlays/payouts-openapi-search.yml
@@ -351,7 +511,9 @@ apis:
       You can now model subscriptions more flexibly using the Prices API. It
       replaces the Plans API and is backwards compatible to simplify your
       migration.
-    tags: []
+    tags:
+      - Plans
+      - Plan
     overlays:
       - type: APIs.io Search
         url: overlays/plans-openapi-search.yml
@@ -367,7 +529,9 @@ apis:
       products, and pricing options should be represented by prices. This
       approach lets you change prices without having to change your provisioning
       scheme.
-    tags: []
+    tags:
+      - Prices
+      - Search
     overlays:
       - type: APIs.io Search
         url: overlays/prices-openapi-search.yml
@@ -381,7 +545,9 @@ apis:
       your goods or service; each version would be a separate Product. They can
       be used in conjunction with Prices to configure pricing in Payment Links,
       Checkout, and Subscriptions.
-    tags: []
+    tags:
+      - Products
+      - Search
     overlays:
       - type: APIs.io Search
         url: overlays/products-openapi-search.yml
@@ -392,7 +558,10 @@ apis:
     description: >-
       A Promotion Code represents a customer-redeemable code for a coupon. It
       can be used to create multiple codes for a single coupon.
-    tags: []
+    tags:
+      - Codes
+      - Promotion
+      - Code
     overlays:
       - type: APIs.io Search
         url: overlays/promotion-codes-openapi-search.yml
@@ -404,7 +573,16 @@ apis:
       A Quote is a way to model prices that you’d like to provide to a customer.
       Once accepted, it will automatically create an invoice, subscription or
       subscription schedule.
-    tags: []
+    tags:
+      - Quotes
+      - Accept
+      - Cancel
+      - Computed
+      - Items
+      - Line
+      - Upfront
+      - Finalize
+      - PDF
     overlays:
       - type: APIs.io Search
         url: overlays/quotes-openapi-search.yml
@@ -416,7 +594,14 @@ apis:
       Stripe Radar provides real-time fraud protection and requires no
       additional development time. Fraud professionals can add Radar for Fraud
       Teams to customize protection and get deeper insights.
-    tags: []
+    tags:
+      - Early
+      - Fraud
+      - Radar
+      - Warnings
+      - Warning
+      - Items
+      - Value
     overlays:
       - type: APIs.io Search
         url: overlays/radar-openapi-search.yml
@@ -428,7 +613,9 @@ apis:
       Refund objects allow you to refund a previously created charge that isn’t
       refunded yet. Funds are refunded to the credit or debit card that’s
       initially charged.
-    tags: []
+    tags:
+      - Refunds
+      - Cancel
     overlays:
       - type: APIs.io Search
         url: overlays/refunds-openapi-search.yml
@@ -442,7 +629,11 @@ apis:
       are also available through the API, so you can schedule them to run
       automatically or run them whenever you need to receive the associated
       report files for accounting purposes.
-    tags: []
+    tags:
+      - Reporting
+      - Reports
+      - Runs
+      - Types
     overlays:
       - type: APIs.io Search
         url: overlays/reporting-openapi-search.yml
@@ -453,7 +644,9 @@ apis:
     description: >-
       Reviews can be used to supplement automated fraud detection with human
       expertise.
-    tags: []
+    tags:
+      - Reviews
+      - Approve
     overlays:
       - type: APIs.io Search
         url: overlays/reviews-openapi-search.yml
@@ -465,7 +658,15 @@ apis:
       Use the Setup Intents API to set up a payment method for future payments.
       It’s similar to a payment, but no charge is created. Set up a payment
       method for future payments now.
-    tags: []
+    tags:
+      - Attempts
+      - Setup
+      - Intents
+      - Intent
+      - Cancel
+      - Confirm
+      - Microdeposits
+      - Verify
     overlays:
       - type: APIs.io Search
         url: overlays/setup-openapi-search.yml
@@ -476,7 +677,10 @@ apis:
     description: >-
       Shipping rates describe the price of shipping presented to your customers
       and applied to a purchase.
-    tags: []
+    tags:
+      - Rates
+      - Shipping
+      - Tokens
     overlays:
       - type: APIs.io Search
         url: overlays/shipping-rates-openapi-search.yml
@@ -489,7 +693,10 @@ apis:
       sigma.scheduled_query_run.created webhook each time the query runs. The
       webhook contains a ScheduledQueryRun object, which you can use to retrieve
       the query results.
-    tags: []
+    tags:
+      - Queries
+      - Runs
+      - Scheduled
     overlays:
       - type: APIs.io Search
         url: overlays/sigma-openapi-search.yml
@@ -502,7 +709,12 @@ apis:
       represent a customer’s payment instrument, and can be used with the Stripe
       API just like a Card object once chargeable, they can be charged, or can
       be attached to customers.
-    tags: []
+    tags:
+      - Sources
+      - Mandate
+      - Notifications
+      - Transactions
+      - Verify
     overlays:
       - type: APIs.io Search
         url: overlays/sources-openapi-search.yml
@@ -511,7 +723,20 @@ apis:
   - aid: stripe:stripe-subscription-api
     name: Stripe Subscription API
     description: Subscriptions allow you to charge a customer on a recurring basis.
-    tags: []
+    tags:
+      - Items
+      - Subscriptions
+      - Record
+      - Summaries
+      - Usage
+      - Records
+      - Schedules
+      - Cancel
+      - Releases
+      - Search
+      - Exposed
+      - Discount
+      - Resume
     overlays:
       - type: APIs.io Search
         url: overlays/subscription-openapi-search.yml
@@ -522,7 +747,17 @@ apis:
     description: >-
       Automate sales tax, VAT, and GST compliance on all your transactions—low
       or no code integrations available.
-    tags: []
+    tags:
+      - Calculations
+      - Taxes
+      - Items
+      - Line
+      - Registrations
+      - Settings
+      - Transactions
+      - Reversals
+      - Codes
+      - Rates
     overlays:
       - type: APIs.io Search
         url: overlays/tax-openapi-search.yml
@@ -533,7 +768,22 @@ apis:
     description: >-
       Use Stripe Terminal to accept in-person payments and extend Stripe
       payments to your point of sale.
-    tags: []
+    tags:
+      - Configurations
+      - Terminal
+      - Connections
+      - Tokens
+      - Locations
+      - Readers
+      - Actions
+      - Cancel
+      - Intent
+      - Payments
+      - Process
+      - Setup
+      - Refunds
+      - Display
+      - Sets
     overlays:
       - type: APIs.io Search
         url: overlays/terminal-openapi-search.yml
@@ -545,7 +795,46 @@ apis:
       Stripe provides a number of resources for testing your integration. Make
       sure to test the following use cases before launch, and use our Postman
       collection to make the testing process simpler.
-    tags: []
+    tags:
+      - Balance
+      - Cash
+      - Customers
+      - Funds
+      - Helpers
+      - Tests
+      - Authorization
+      - Issuing
+      - Capture
+      - Expire
+      - Increment
+      - Reverse
+      - Cards
+      - Deliveries
+      - Shipping
+      - Fail
+      - Returns
+      - Ship
+      - Force
+      - Transactions
+      - Refunds
+      - Unlinked
+      - Methods
+      - Payments
+      - Present
+      - Readers
+      - Terminal
+      - Clocks
+      - Clock
+      - Advance
+      - Inbound
+      - Transfers
+      - Treasury
+      - Succeed
+      - Outbound
+      - Posts
+      - Credits
+      - Received
+      - Debits
     overlays:
       - type: APIs.io Search
         url: overlays/test-helpers-openapi-search.yml
@@ -561,7 +850,8 @@ apis:
       payments integrations to perform this process on the client-side. This
       guarantees that no sensitive card data touches your server, and allows
       your integration to operate in a PCI-compliant way.
-    tags: []
+    tags:
+      - Tokens
     overlays:
       - type: APIs.io Search
         url: overlays/tokens-openapi-search.yml
@@ -573,7 +863,9 @@ apis:
       To top up your Stripe balance, you create a top-up object. You can
       retrieve individual top-ups, as well as list all top-ups. Top-ups are
       identified by a unique, random ID.
-    tags: []
+    tags:
+      - Topups
+      - Cancel
     overlays:
       - type: APIs.io Search
         url: overlays/topups-openapi-search.yml
@@ -584,7 +876,9 @@ apis:
     description: >-
       A Transfer object is created when you move funds between Stripe accounts
       as part of Connect.
-    tags: []
+    tags:
+      - Transfers
+      - Reversals
     overlays:
       - type: APIs.io Search
         url: overlays/transfers-openapi-search.yml
@@ -598,7 +892,24 @@ apis:
       businesses to hold funds, pay bills, earn yield, and manage their cash
       flow. Many users build Stripe Issuing in conjunction with Stripe Treasury
       to attach cards to spend funds in the account.
-    tags: []
+    tags:
+      - Credit
+      - Reversals
+      - Treasury
+      - Debit
+      - Accounts
+      - Financial
+      - Features
+      - Inbound
+      - Transfers
+      - Cancel
+      - Outbound
+      - Payments
+      - Credits
+      - Received
+      - Debits
+      - Entries
+      - Transactions
     overlays:
       - type: APIs.io Search
         url: overlays/treasury-openapi-search.yml
@@ -609,7 +920,9 @@ apis:
     description: >-
       You can configure webhook endpoints via the API to be notified about
       events that happen in your Stripe account or connected accounts.
-    tags: []
+    tags:
+      - Endpoints
+      - Webhooks
     overlays:
       - type: APIs.io Search
         url: overlays/webhook-openapi-search.yml
