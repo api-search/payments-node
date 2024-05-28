@@ -6,8 +6,9 @@ paths:
     get:
       description: <p>Returns a list of credit notes.</p>
       tags:
-        - V1
-        - Credit_notes
+        - Credit
+        - Notes
+      summary: Retrieve Credit Notes
     post:
       description: >-
         <p>Issue a credit note to adjust the amount of a finalized invoice. For
@@ -46,15 +47,17 @@ paths:
         or <code>post_payment_credit_notes_amount</code> depending on its
         <code>status</code> at the time of credit note creation.</p>
       tags:
-        - V1
-        - Credit_notes
+        - Credit
+        - Notes
+      summary: Create Credit Notes
   /v1/credit_notes/preview:
     get:
       description: <p>Get a preview of a credit note without creating it.</p>
       tags:
-        - V1
-        - Credit_notes
-        - Preview
+        - Credit
+        - Notes
+        - Previews
+      summary: Retrieve Credit Notes Preview
   /v1/credit_notes/preview/lines:
     get:
       description: >-
@@ -63,10 +66,11 @@ paths:
         items. This URL you can retrieve the full (paginated) list of line
         items.</p>
       tags:
-        - V1
-        - Credit_notes
-        - Preview
+        - Credit
         - Lines
+        - Notes
+        - Previews
+      summary: Retrieve Credit Notes Preview Lines
   /v1/credit_notes/{credit_note}/lines:
     get:
       description: >-
@@ -75,40 +79,29 @@ paths:
         a URL where you can retrieve the full (paginated) list of line
         items.</p>
       tags:
-        - V1
-        - Credit_notes
-        - Preview
+        - Credit
         - Lines
-        - Credit_note
+        - Notes
+      summary: Retrieve Credit Notes Credit Note Lines
   /v1/credit_notes/{id}:
     get:
       description: <p>Retrieves the credit note object with the given identifier.</p>
       tags:
-        - V1
-        - Credit_notes
-        - Preview
-        - Lines
-        - Credit_note
-        - Id
+        - Credit
+        - Notes
+      summary: Retrieve Credit Notes Id
     post:
       description: <p>Updates an existing credit note.</p>
       tags:
-        - V1
-        - Credit_notes
-        - Preview
-        - Lines
-        - Credit_note
-        - Id
+        - Credit
+        - Notes
+      summary: Create Credit Notes Id
   /v1/credit_notes/{id}/void:
     post:
       description: >-
         <p>Marks a credit note as void. Learn more about <a
         href="/docs/billing/invoices/credit-notes#voiding">voiding credit note
       tags:
-        - V1
-        - Credit_notes
-        - Preview
-        - Lines
-        - Credit_note
-        - Id
-        - Vo
+        - Credit
+        - Notes
+      summary: Create Credit Notes Id Void
