@@ -7,8 +7,8 @@ description: >-
   credit cards to create a global, real-time payment solution.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/paypal.yml
-created: 2023/11/22
-modified: 2023/11/22
+created: 2023-11-22
+modified: 2024-06-08
 specificationVersion: '0.16'
 tags: []
 apis:
@@ -30,12 +30,7 @@ apis:
       - type: Documentation
         url: https://developer.paypal.com/docs/api/subscriptions/v1/
       - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/billing_subscriptions_v1.json
-    overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/billing_subscriptions_v1.json-openapi-search.yml
+        url: properties/paypal-billing-subscriptions-openapi-original.yml
     aid: paypal:paypal-billing-subscriptions-api
   - name: Paypal Catalog Products API
     description: >-
@@ -49,14 +44,9 @@ apis:
       - type: Documentation
         url: https://developer.paypal.com/docs/api/catalog-products/v1/
       - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/catalogs_products_v1.json
-    overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/catalogs_products_v1.json-openapi-search.yml
+        url: properties/paypal-catalog-products-openapi-original.yml
     aid: paypal:paypal-catalog-products-api
-  - name: Paypal Orders API
+  - name: Paypal Checkout Orders API
     description: >-
       An order represents a payment between two or more parties. Use the Orders
       API to create, update, retrieve, authorize, and capture orders.
@@ -68,13 +58,8 @@ apis:
       - type: Documentation
         url: https://developer.paypal.com/docs/api/orders/v2/
       - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/checkout_orders_v2.json
-    overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/checkout_orders_v2.json-openapi-search.yml
-    aid: paypal:paypal-orders-api
+        url: properties/paypal-checkout-orders-openapi-original.yml
+    aid: paypal:paypal-checkout-orders-api
   - name: Paypal Disputes API
     description: >-
       Occasionally, something goes wrong with a customer's order. To dispute a
@@ -89,13 +74,125 @@ apis:
       - type: Documentation
         url: https://developer.paypal.com/docs/api/customer-disputes/v1/
       - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/customer_disputes_v1.json
-    overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/customer_disputes_v1.json-openapi-search.yml
+        url: properties/paypal-customer-disputes-openapi-original.yml
     aid: paypal:paypal-disputes-api
+  - name: Paypal Customer Partner Referrals API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-customer-partner-referrals-openapi-original.yml
+    aid: paypal:customer-partner-referrals-api   
+  - name: Paypal Invoicing API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-invoicing-openapi-original.yml
+    aid: paypal:invoicing-api  
+  - name: Paypal Notification Webhooks API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-notification-webhooks-openapi-original.yml
+    aid: paypal:notification-webhooks-api    
+  - name: Paypal Payment Experience API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-payment-experience-openapi-original.yml
+    aid: paypal:payment-experience-api  
+  - name: Paypal Payment API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-payments-openapi-original.yml
+    aid: paypal:payment-api 
+  - name: Paypal Payouts API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-payouts-openapi-original.yml
+    aid: paypal:payouts-api    
+  - name: Paypal Reporting Transactions API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-reporting-transactions-openapi-original.yml
+    aid: paypal:reporting-transactions-api  
+  - name: Paypal Shipping Tracking API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-shipping-tracking-openapi-original.yml
+    aid: paypal:shipping-tracking-api     
+  - name: Paypal Vault Payment Tokens API
+    description: >-
+      Needs description.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.paypal.com/docs/api/
+    baseURL: https://api.example.com
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://developer.paypal.com/docs/api/
+      - type: OpenAPI
+        url: properties/paypal-vault-payment-tokens-openapi-original.yml
+    aid: paypal:vault-payment-tokens-api                            
 common:
   - type: OpenAPI Specs
     url: https://github.com/paypal/paypal-rest-api-specifications/tree/main/openapi
