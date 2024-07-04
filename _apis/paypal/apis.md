@@ -7,7 +7,7 @@ description: >-
   credit cards to create a global, real-time payment solution.
 url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/paypal.yml
 created: 2024/04/14
-modified: '2024-07-03'
+modified: '2024-07-04'
 specificationVersion: '0.18'
 tags: []
 apis:
@@ -64,5 +64,9 @@ maintainers:
     url: http://apievangelist.com
     email: info@apievangelist.com
 aid: paypal
+score: 25
+overlays:
+  - type: API Evangelist Ratings
+    url: /overlays/api-evangelist-ratings.yml
 
 ---
