@@ -1,1197 +1,844 @@
-specificationVersion: '0.18'
-aid: stripe
-name: Stripe
+name: Adyen
 description: >-
-  Millions of companies of all sizes use Stripe online and in person to accept
-  payments, send payouts, automate financial processes, and ultimately grow
-  revenue.
-url: https://artisinal.apisjson.org/apis/stripe/apis.yml
+  End-to-end payments, data, and financial management in a single solution. Meet
+  the financial technology platform that helps you realize your ambitions
+  faster.
+url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/adyen.yml
 created: 2024/04/14
 modified: '2024-07-04'
-tags: []
+specificationVersion: '0.18'
+tags:
+  - Payments
 apis:
-  - aid: stripe:stripe-accounts-api
-    name: Stripe Accounts API
+  - name: Adyen Accounting Notifications API
     description: >-
-      This is an object representing a Stripe account. You can retrieve it to
-      see properties on the account like its current requirements or if the
-      account is enabled to make live charges or receive payouts.
+      Adyen sends notifications through webhooks to inform your system about
+      incoming and outgoing transfers in your platform. You can use these
+      webhooks to build your implementation. For example, you can use this
+      information to update balances in your own dashboards or to keep track of
+      incoming funds.
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/accounting-notifications-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/accounting-notifications-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-accounting-notifications-api
+  - name: Adyen Account API
+    description: >-
+      This API is used for the classic integration. If you are just starting
+      your implementation, refer to our new integration guide instead. The
+      Account API provides endpoints for managing account-related entities on
+      your platform. These related entities include account holders, accounts,
+      bank accounts, shareholders, and verification-related documents. The
+      management operations include actions such as creation, retrieval,
+      updating, and deletion of them.
     tags:
       - Accounts
+      - Arrangements
       - Bank
-      - Capabilities
-      - External
-      - Links
-      - Login
-      - People
-      - Person
-      - Persons
-      - Reject
-      - Sessions
+      - Close
+      - Documents
+      - Forms
+      - Holders
+      - Legal
+      - Methods
+      - Payouts
+      - Processing
+      - Shareholders
+      - Signatories
+      - States
+      - Stores
+      - Suspend
+      - Taxes
+      - Triggers
+      - Unsuspend
+      - Uploaded
+      - Uploads
+      - Verification
     overlays:
       - type: APIs.io Search
         url: overlays/accounts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/accounts-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/accounts
-      - type: OpenAPI
-        url: properties/accounts-openapi-original.yml
-  - aid: stripe:stripe-apple-pay-api
-    name: Stripe Apple Pay API
+    aid: adyen:adyen-account-api
+  - name: Adyen Authentication Webhooks API
     description: >-
-      Stripe users can accept Apple Pay in iOS applications in iOS 9 and above,
-      and on the web in Safari starting with iOS 10 or macOS Sierra. There are
-      no additional fees to process Apple Pay payments, and the pricing is the
-      same as other card transactions.
-    tags:
-      - Apple
-      - Domains
-      - Pay
+      Adyen sends webhooks to inform your system about events related to
+      cardholder authentication.
+    tags: []
     overlays:
       - type: APIs.io Search
-        url: overlays/apple-pay-openapi-search.yml
+        url: overlays/authentication-webhooks-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/apple-pay-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/apple-pay
-      - type: OpenAPI
-        url: properties/apple-pay-openapi-original.yml
-  - aid: stripe:stripe-application-fees-api
-    name: Stripe Application Fees API
+        url: overlays/authentication-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-authentication-webhooks-api
+  - name: Adyen Balance Control API
     description: >-
-      When you collect a transaction fee on top of a charge made for your user
-      (using Connect), an Application Fee object is created in your account. You
-      can list, retrieve, and refund application fees.
-    tags:
-      - Applications
-      - Fees
-      - Fee
-      - Refunds
-    overlays:
-      - type: APIs.io Search
-        url: overlays/application-fees-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/application-fees-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/application_fees
-      - type: OpenAPI
-        url: properties/application-fees-openapi-original.yml
-  - aid: stripe:stripe-application-secrets-api
-    name: Stripe Application Secrets API
-    description: >-
-      Secret Store is an API that allows Stripe Apps developers to securely
-      persist secrets for use by UI Extensions and app backends.
-    tags:
-      - Applications
-      - Secrets
-      - Find
-    overlays:
-      - type: APIs.io Search
-        url: overlays/application-secrets-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/application-secrets-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/secret_management
-      - type: OpenAPI
-        url: properties/application-secrets-openapi-original.yml
-  - aid: stripe:stripe-balance-api
-    name: Stripe Balance API
-    description: >-
-      This is an object representing your Stripe balance. You can retrieve it to
-      see the balance currently on your Stripe account. You can also retrieve
-      the balance history, which contains a list of transactions that
-      contributed to the balance (charges, payouts, and so forth).
+      The Balance Control API lets you transfer funds between merchant accounts
+      that belong to the same legal entity and are under the same company
+      account.
     tags:
       - Balance
-      - History
-      - Transactions
+      - Transfers
     overlays:
       - type: APIs.io Search
-        url: overlays/balance-openapi-search.yml
+        url: overlays/balance-control-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/balance-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/balance
-      - type: OpenAPI
-        url: properties/balance-openapi-original.yml
-  - aid: stripe:stripe-billing-api
-    name: Stripe Billing API
+        url: overlays/balance-control-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-balance-control-api
+  - name: Adyen BinLookup API
     description: >-
-      Create and manage subscriptions, recurring payments, and recurring
-      revenue.
+      The BIN Lookup API provides endpoints for retrieving information, such as
+      cost estimates, and 3D Secure supported version based on a given BIN.
     tags:
-      - Billing
-      - Configurations
-      - Portals
-      - Sessions
+      - Availability
+      - Available
+      - Checks
+      - Cost
+      - Estimates
+      - Fees
+      - If
+      - Is
+      - Secure
     overlays:
       - type: APIs.io Search
-        url: overlays/billing-openapi-search.yml
+        url: overlays/binlookup-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/billing-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/billing
-      - type: OpenAPI
-        url: properties/billing-openapi-original.yml
-  - aid: stripe:stripe-charges-api
-    name: Stripe Charges API
+        url: overlays/binlookup-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-binlookup-api
+  - name: Adyen Checkout API
     description: >-
-      The Charge object represents a single attempt to move money into your
-      Stripe account. PaymentIntent confirmation is the most common way to
-      create Charges, but transferring money to a different Stripe account
-      through Connect also creates Charges. Some legacy payment flows create
-      Charges directly, which is not recommended for new integrations.
+      Adyen Checkout API provides a simple and flexible way to initiate and
+      authorise online payments. You can use the same integration for payments
+      made with cards (including 3D Secure), mobile wallets, and local payment
+      methods (for example, iDEAL and Sofort).
     tags:
-      - Charges
-      - Search
-      - Charge
+      - Amount
+      - Apple
+      - Authorised
+      - Available
+      - Balance
+      - Brands
+      - Cancel
+      - Cancels
       - Capture
-      - Disputes
-      - Close
+      - Captured
+      - Captures
+      - Cards
+      - Details
+      - Domains
+      - Donations
+      - Gifts
+      - Keys
+      - Link
+      - Links
+      - Methods
+      - 'On'
+      - Orders
+      - Origin
+      - Pay
+      - Payments
+      - Psp
+      - References
       - Refunds
-    overlays:
-      - type: APIs.io Search
-        url: overlays/charges-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/charges-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/charges
-      - type: OpenAPI
-        url: properties/charges-openapi-original.yml
-  - aid: stripe:stripe-checkout-api
-    name: Stripe Checkout API
-    description: >-
-      Checkout is a low-code payment integration that creates a customizable
-      form for collecting payments. You can embed Checkout directly in your
-      website or redirect customers to a Stripe-hosted payment page. It supports
-      one-time payments and subscriptions and accepts over 40 local payment
-      methods.
-    tags:
-      - Checkout
+      - Results
+      - Reversals
       - Sessions
-      - Expire
-      - Items
-      - Line
+      - Status
+      - Stored
+      - Submit
+      - The
+      - Tokens
+      - Transactions
+      - Values
+      - Verify
     overlays:
       - type: APIs.io Search
         url: overlays/checkout-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/checkout-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/payments/checkout
-      - type: OpenAPI
-        url: properties/checkout-openapi-original.yml
-  - aid: stripe:stripe-climate-api
-    name: Stripe Climate API
+    aid: adyen:adyen-checkout-api
+    humanURL: https://docs.adyen.com/api-explorer/Checkout/latest/overview
+  - name: Adyen Configuration API
     description: >-
-      Stripe Climate is the easiest way to help promising permanent carbon
-      removal technologies launch and scale. Join a growing group of ambitious
-      businesses that are changing the course of carbon removal.
+      The Configuration API enables you to create a platform where you can
+      onboard your users as account holders and create balance accounts, cards,
+      and business accounts.
     tags:
-      - Climate
-      - Orders
-      - Cancel
-      - Products
-      - Reservations
-      - Confirm
-      - Suppliers
-      - Supplier
-    overlays:
-      - type: APIs.io Search
-        url: overlays/climate-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/climate-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/climate
-      - type: OpenAPI
-        url: properties/climate-openapi-original.yml
-  - aid: stripe:stripe-country-api
-    name: Stripe Country API
-    description: >-
-      Stripe needs to collect certain pieces of information about each account
-      created. These requirements can differ depending on the account’s country.
-      The Country Specs API makes these rules available to your integration.
-    tags:
-      - Countries
-      - Specs
-    overlays:
-      - type: APIs.io Search
-        url: overlays/country-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/country-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/country_specs
-      - type: OpenAPI
-        url: properties/country-openapi-original.yml
-  - aid: stripe:stripe-coupons-api
-    name: Stripe Coupons API
-    description: >-
-      A coupon contains information about a percent-off or amount-off discount
-      you might want to apply to a customer. Coupons may be applied to
-      subscriptions, invoices, checkout sessions, quotes, and more. Coupons do
-      not work with conventional one-off charges or payment intents.
-    tags:
-      - Coupons
-    overlays:
-      - type: APIs.io Search
-        url: overlays/coupons-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/coupons-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/coupons
-      - type: OpenAPI
-        url: properties/coupons-openapi-original.yml
-  - aid: stripe:stripe-credit-notes-api
-    name: Stripe Credit Notes API
-    description: >-
-      Issue a credit note to adjust an invoice’s amount after the invoice is
-      finalized.
-    tags:
-      - Credit
-      - Notes
-      - Previews
-      - Lines
-    overlays:
-      - type: APIs.io Search
-        url: overlays/credit-notes-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/credit-notes-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/credit_notes
-      - type: OpenAPI
-        url: properties/credit-notes-openapi-original.yml
-  - aid: stripe:stripe-customers-api
-    name: Stripe Customers API
-    description: >-
-      This object represents a customer of your business. Use it to create
-      recurring charges and track payments that belong to the same customer.
-    tags:
-      - Customers
-      - Search
-      - Balance
-      - Transactions
       - Accounts
+      - Available
+      - Balance
       - Bank
-      - Verify
+      - Calculate
+      - Card Orders
       - Cards
-      - Cash
-      - Discount
-      - Funding
-      - Instructions
-      - Methods
+      - Change
+      - Forms
+      - Grants
+      - Groups
+      - Holders
+      - Identification
+      - Instruments
+      - Items
+      - Keys
+      - Linked
+      - Networks
+      - Offers
+      - Orders
       - Payments
-      - Sources
-      - Subscriptions
-      - Exposed
-      - Ids
+      - Pin
+      - Pins
+      - Platforms
+      - Public
+      - Reveal
+      - Routes
+      - Rules
+      - Sweep
+      - Sweeps
       - Taxes
+      - The
+      - Tokens
+      - Transactions
+      - Transfers
+      - Under
+      - Validate
     overlays:
       - type: APIs.io Search
-        url: overlays/customers-openapi-search.yml
+        url: overlays/configuration-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/customers-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/customers
-      - type: OpenAPI
-        url: properties/customers-openapi-original.yml
-  - aid: stripe:stripe-disputes-api
-    name: Stripe Disputes API
+        url: overlays/configuration-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-configuration-api
+  - name: Adyen Configuration Webhooks API
     description: >-
-      A dispute occurs when a customer questions your charge with their card
-      issuer. When this happens, you have the opportunity to respond to the
-      dispute with evidence that shows that the charge is legitimate.
+      Adyen sends webhooks to inform your system about events that occur in your
+      platform. These events include, for example, when an account holders
+      capabilities are updated, or when a sweep configuration is created or
+      updated. When an event occurs, Adyen makes an HTTP POST request to a URL
+      on your server and includes the details of the event in the request body.
+      You can use these webhooks to build your implementation.
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/configuration-webhooks-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/configuration-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-configuration-webhooks-api
+  - name: Adyen Data Protection API
+    description: >-
+      Adyen Data Protection API provides a way for you to process [Subject
+      Erasure Requests](https://gdpr-info.eu/art-17-gdpr/) as mandated in GDPR.
+      Use our API to submit a request to delete shopper''s data, including
+      payment details and other related information (for example, delivery
+      address or shopper email).
     tags:
+      - Erasure
+      - Subjects
+      - Submit
+    overlays:
+      - type: APIs.io Search
+        url: overlays/data-protection-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/data-protection-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-data-protection-api
+  - name: Adyen Disputes API
+    description: >-
+      You can use the Disputes API to automate the dispute handling process so
+      that you can respond to disputes and chargebacks as soon as they are
+      initiated. The Disputes API lets you retrieve defense reasons, supply and
+      delete defense documents, and accept or defend disputes.
+    tags:
+      - Accept
+      - Applicable
+      - Defend
+      - Defense
       - Disputes
-      - Close
+      - Documents
+      - Reasons
+      - Supply
     overlays:
       - type: APIs.io Search
         url: overlays/disputes-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/disputes-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/disputes
-      - type: OpenAPI
-        url: properties/disputes-openapi-original.yml
-  - aid: stripe:stripe-ephemeral-keys-api
-    name: Stripe Ephemeral Keys API
+    aid: adyen:adyen-disputes-api
+  - name: Adyen Funds API
     description: >-
-      Stripe.js uses ephemeral keys to securely retrieve Card information from
-      the Stripe API without publicly exposing your secret keys. You need to do
-      some of the ephemeral key exchange on the server-side to set this up.
-    tags:
-      - Ephemeral
-      - Keys
-    overlays:
-      - type: APIs.io Search
-        url: overlays/ephemeral-keys-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/ephemeral-keys-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/issuing/elements
-      - type: OpenAPI
-        url: properties/ephemeral-keys-openapi-original.yml
-  - aid: stripe:stripe-events-api
-    name: Stripe Events API
-    description: >-
-      Events are our way of letting you know when something interesting happens
-      in your account. When an interesting event occurs, we create a new Event
-      object.
-    tags:
-      - Events
-    overlays:
-      - type: APIs.io Search
-        url: overlays/events-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/events-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/events
-      - type: OpenAPI
-        url: properties/events-openapi-original.yml
-  - aid: stripe:stripe-exchange-rates-api
-    name: Stripe Exchange Rates API
-    description: >-
-      Stripe supports processing charges in 135+ currencies allowing you to
-      present prices in a customer’s native currency. Doing so can improve sales
-      and help customers avoid conversion costs. In order to present prices in
-      your customer’s currency, you need to specify the presentment currency
-      when creating a PaymentIntent or a charge.
-    tags:
-      - Exchange
-      - Rates
-    overlays:
-      - type: APIs.io Search
-        url: overlays/exchange-rates-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/exchange-rates-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/currencies/conversions
-      - type: OpenAPI
-        url: properties/exchange-rates-openapi-original.yml
-  - aid: stripe:stripe-files-api
-    name: Stripe Files API
-    description: >-
-      This object represents files hosted on Stripe’s servers. You can upload
-      files with the create file request (for example, when uploading dispute
-      evidence). Stripe also creates files independently (for example, the
-      results of a Sigma scheduled query).
-    tags:
-      - Files
-      - File
-    overlays:
-      - type: APIs.io Search
-        url: overlays/files-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/files-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/files
-      - type: OpenAPI
-        url: properties/files-openapi-original.yml
-  - aid: stripe:stripe-financial-connections-api
-    name: Stripe Financial Connections API
-    description: >-
-      Financial Connections lets your users securely share their financial data
-      by linking their financial accounts to your business. Use Financial
-      Connections to access user-permissioned account data such as tokenized
-      account and routing numbers, balances, ownerships details, and
-      transactions.
+      The Fund API provides endpoints for managing the funds in the accounts on
+      your platform. These management operations include, for example, the
+      transfer of funds from one account to another, the payout of funds to an
+      account holder, and the retrieval of balances in an account.
     tags:
       - Accounts
-      - Connections
-      - Financial
-      - Disconnect
-      - Owners
-      - Refresh
-      - Subscribe
-      - Unsubscribe
-      - Sessions
-      - Transactions
-    overlays:
-      - type: APIs.io Search
-        url: overlays/financial-connections-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/financial-connections-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/financial-connections
-      - type: OpenAPI
-        url: properties/financial-connections-openapi-original.yml
-  - aid: stripe:stripe-identity-api
-    name: Stripe Identity API
-    description: >-
-      Use Stripe Identity to confirm the identity of global users to prevent
-      fraud, streamline risk operations, and increase trust and safety.
-    tags:
-      - Entities
-      - Identity
-      - Reports
-      - Verification
-      - Sessions
-      - Cancel
-      - Redact
-    overlays:
-      - type: APIs.io Search
-        url: overlays/identity-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/identity-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/identity
-      - type: OpenAPI
-        url: properties/identity-openapi-original.yml
-  - aid: stripe:stripe-invoice-api
-    name: Stripe Invoice API
-    description: >-
-      Invoices are statements of amounts owed by a customer, and are either
-      generated one-off, or generated periodically from a subscription.
-    tags:
-      - Invoice Items
-      - Invoices
-      - Search
-      - Upcoming
-      - Lines
-      - Finalize
-      - Items
-      - Line
-      - Mark
-      - Uncollectible
-      - Pay
-      - Send
-    overlays:
-      - type: APIs.io Search
-        url: overlays/invoice-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/invoice-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/invoices
-      - type: OpenAPI
-        url: properties/invoice-openapi-original.yml
-  - aid: stripe:stripe-issuing-api
-    name: Stripe Issuing API
-    description: >-
-      An API for businesses to instantly create, manage, and distribute payment
-      cards.
-    tags:
-      - Authorization
-      - Issuing
-      - Approve
-      - Decline
-      - Card Holders
-      - Cards
-      - Disputes
-      - Submit
-      - Settlements
-      - Tokens
-      - Transactions
-    overlays:
-      - type: APIs.io Search
-        url: overlays/issuing-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/issuing-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/issuing
-      - type: OpenAPI
-        url: properties/issuing-openapi-original.yml
-  - aid: stripe:stripe-link-api
-    name: Stripe Link API
-    description: >-
-      You can use the Payment Links API to create a payment link that you can
-      share with your customers. Stripe redirects customers who open this link
-      to a Stripe-hosted payment page.
-    tags:
-      - Accounts
-      - Link
-      - Sessions
-      - Linked
-      - Disconnect
-      - Owners
-      - Refresh
-    overlays:
-      - type: APIs.io Search
-        url: overlays/link-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/link-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/payment-links/api
-      - type: OpenAPI
-        url: properties/link-openapi-original.yml
-  - aid: stripe:stripe-payment-intents-api
-    name: Stripe Payment Intents API
-    description: >-
-      A PaymentIntent guides you through the process of collecting a payment
-      from your customer. We recommend that you create exactly one PaymentIntent
-      for each order or customer session in your system. You can reference the
-      PaymentIntent later to see the history of payment attempts for a
-      particular session.
-    tags:
-      - Intents
-      - Payments
-      - Search
-      - Intent
       - Balance
-      - Customers
-      - Cancel
-      - Capture
-      - Confirm
-      - Authorization
-      - Increment
-      - Microdeposits
-      - Verify
+      - Balances
+      - Benefactor's
+      - Beneficiary
+      - Between
+      - Current
+      - Debit
+      - Designate
+      - Direct
+      - Funds
+      - Holders
+      - Most
+      - Out
+      - Paid
+      - Pay
+      - Payouts
+      - Platforms
+      - Recent
+      - Refunds
+      - Send
+      - Since
+      - The
+      - Transactions
+      - Transfers
     overlays:
       - type: APIs.io Search
-        url: overlays/payment-intents-openapi-search.yml
+        url: overlays/funds-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/payment-intents-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/payment_intents
-      - type: OpenAPI
-        url: properties/payment-intents-openapi-original.yml
-  - aid: stripe:stripe-payment-links-api
-    name: Stripe Payment Links API
+        url: overlays/funds-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-funds-api
+  - name: Adyen Hosted Onboarding API
     description: >-
-      A payment link is a shareable URL that will take your customers to a
-      hosted payment page. A payment link can be shared and used multiple times.
-      When a customer opens a payment link it will open a new checkout session
-      to render the payment page. You can use checkout session events to track
-      payments through payment links.
+      The Fund API provides endpoints for managing the funds in the accounts on
+      your platform. These management operations include, for example, the
+      transfer of funds from one account to another, the payout of funds to an
+      account holder, and the retrieval of balances in an account.
     tags:
-      - Links
-      - Payments
+      - Adyen-hosted
+      - Compliance
       - Link
-      - Items
-      - Line
+      - Onboarding
+      - PCI
+      - Page
+      - Questionnaires
+      - URL
     overlays:
       - type: APIs.io Search
-        url: overlays/payment-links-openapi-search.yml
+        url: overlays/hosted-onboarding-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/payment-links-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/payment_links/payment_links
-      - type: OpenAPI
-        url: properties/payment-links-openapi-original.yml
-  - aid: stripe:stripe-payment-method-api
-    name: Stripe Payment Method API
+        url: overlays/hosted-onboarding-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-hosted-onboarding-api
+  - name: Adyen Legal Entity API
     description: >-
-      The Payment Methods API allows you to accept a variety of payment methods
-      through a single API. A PaymentMethod object contains the payment method
-      details to create payments.
+      The Legal Entity Management API enables you to manage legal entities that
+      contain information required for verification.
+    tags:
+      - Accept
+      - Acceptance
+      - Adyen-hosted
+      - Business
+      - Checks
+      - Confirm
+      - Data
+      - Details
+      - Documents
+      - Entities
+      - Errors
+      - Generate
+      - Hosted
+      - Information
+      - Instruments
+      - Legal
+      - Line
+      - Lines
+      - Link
+      - Links
+      - Onboarding
+      - PCI
+      - Page
+      - Pciid
+      - Questionnaires
+      - Reviews
+      - Services
+      - Sign
+      - Status
+      - Templates
+      - Terms
+      - Terms Of Service Documents
+      - Theme
+      - Themes
+      - Transfers
+      - Under
+      - Uploads
+      - Verification
+    overlays:
+      - type: APIs.io Search
+        url: overlays/legal-entity-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/legal-entity-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-legal-entity-api
+  - name: Adyen Legal Entity API
+    description: >-
+      The Legal Entity Management API enables you to manage legal entities that
+      contain information required for verification.
+    tags:
+      - Accept
+      - Acceptance
+      - Adyen-hosted
+      - Business
+      - Checks
+      - Confirm
+      - Data
+      - Details
+      - Documents
+      - Entities
+      - Errors
+      - Generate
+      - Hosted
+      - Information
+      - Instruments
+      - Legal
+      - Line
+      - Lines
+      - Link
+      - Links
+      - Onboarding
+      - PCI
+      - Page
+      - Pciid
+      - Questionnaires
+      - Reviews
+      - Services
+      - Sign
+      - Status
+      - Templates
+      - Terms
+      - Terms Of Service Documents
+      - Theme
+      - Themes
+      - Transfers
+      - Under
+      - Uploads
+      - Verification
+    overlays:
+      - type: APIs.io Search
+        url: overlays/legal-entity-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/legal-entity-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-legal-entity-api
+  - name: Adyen Management API
+    description: >-
+      Configure and manage your Adyen company and merchant accounts, stores, and
+      payment terminals.
+    tags:
+      - Accounts
+      - Actions
+      - Activate
+      - Allowed
+      - Android
+      - Apple
+      - Applications
+      - Billing
+      - Cancel
+      - Certificates
+      - Clients
+      - Companies
+      - Conditions
+      - Configurations
+      - Credentials
+      - Descriptions
+      - Details
+      - Domains
+      - Entities
+      - Generate
+      - HMAC
+      - Keys
+      - Locations
+      - Logic
+      - Logo
+      - Logos
+      - Me
+      - Merchants
+      - Methods
+      - Models
+      - Orders
+      - Origin
+      - Origins
+      - Pay
+      - Payments
+      - Payouts
+      - Products
+      - Reassign
+      - References
+      - Removes
+      - Rules
+      - Sets
+      - Settings
+      - Shipping
+      - Split
+      - Store
+      - Stores
+      - Terminal
+      - Terminals
+      - Tests
+      - The
+      - Up
+      - Uploads
+      - Users
+      - Webhooks
+    overlays:
+      - type: APIs.io Search
+        url: overlays/management-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/management-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-management-api
+  - name: Adyen Management Webhooks API
+    description: >-
+      Adyen uses webhooks to inform your system about events that happen with
+      your Adyen company and merchant accounts, stores, payment terminals, and
+      payment methods when using [Management
+      API](https://docs.adyen.com/api-explorer/#/ManagementService/latest/overview).
+      When a and includes the details of the event in the request body. See
+      [Webhooks](https://docs.adyen.com/development-resources/webhooks) for more
+      information.
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/management-webhooks-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/management-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-management-webhooks-api
+  - name: Adyen Notification Configuration API
+    description: >-
+      This API is used for the classic integration. If you are just starting
+      your implementation, refer to our [new integration
+      guide](https://docs.adyen.com/marketplaces-and-platforms) instead.\n\nThe
+      Notification Configuration API provides endpoints for setting up and
+      testing notifications that inform you of events on your platform, for
+      example when a verification check or a payout has been completed.\n\nFor
+      more information, refer to our
+      [documentation](https://docs.adyen.com/marketplaces-and-platforms/classic/notifications).
     tags:
       - Configurations
-      - Methods
-      - Payments
-      - Domains
-      - Ate
-      - Val
-      - Validate
-      - Attach
-      - Detach
+      - Notifications
+      - Subscribe
+      - Subscriptions
+      - Tests
     overlays:
       - type: APIs.io Search
-        url: overlays/payment-method-openapi-search.yml
+        url: overlays/notification-configurations-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/payment-method-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/payments/payment-methods
-      - type: OpenAPI
-        url: properties/payment-method-openapi-original.yml
-  - aid: stripe:stripe-payouts-api
-    name: Stripe Payouts API
+        url: >-
+          overlays/notification-configurations-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-notification-configuration-api
+  - name: Adyen Notification Webhooks API
     description: >-
-      A Payout object is created when you receive funds from Stripe, or when you
-      initiate a payout to either a bank account or debit card of a connected
-      Stripe account. You can retrieve individual payouts, and list all payouts.
-      Payouts are made on varying schedules, depending on your country and
-      industry.
+      Adyen sends notifications through webhooks to inform your system about
+      events that occur in the balance platform. These events include, for
+      example, a card user making a payment, or a merchant starting a refund.
+      When an event occurs, Adyen makes an HTTP POST request to a URL on your
+      server and includes the details of the event in the request body. You can
+      use the webhooks to build your implementation. For example, you can use
+      this information to update balances in your own dashboards or to keep
+      track of incoming funds.
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/notification-webhooks-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/notification-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-notification-webhooks-api
+  - name: Adyen Notifications API
+    description: >-
+      The Notification API sends notifications to the endpoints specified in a
+      given subscription. Subscriptions are managed through the Notification
+      Configuration API. The API specifications listed here detail the format of
+      each notification. For more information, refer to our
+      [documentation](https://docs.adyen.com/marketplaces-and-platforms/classic/notifications).
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/notifications-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/notifications-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-notifications-api
+  - name: Adyen Payments API
+    description: >-
+      A set of API endpoints that allow you to initiate, settle, and modify
+      payments on the Adyen payments platform. You can use the API to accept
+      card payments (including One-Click and 3D Secure), bank transfers,
+      ewallets, and many other payment methods.
     tags:
-      - Payouts
+      - Amount
+      - Authentication
+      - Authorised
+      - Authorization
       - Cancel
-      - Reverse
+      - Capture
+      - Captured
+      - Change
+      - Complete
+      - Donate
+      - Donations
+      - In-person
+      - Payments
+      - Pending
+      - References
+      - Refunds
+      - Results
+      - The
+      - Using
+      - Your
+      - ~!
+    overlays:
+      - type: APIs.io Search
+        url: overlays/payments-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/payments-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-payments-api
+  - name: Adyen Payouts API
+    description: >-
+      A set of API endpoints that allow you to store payout details, confirm, or
+      decline a payout.\n\nFor more information, refer to [Online
+      payouts](https://docs.adyen.com/online-payments/online-payouts).
+    tags:
+      - Cancel
+      - Cards
+      - Confirm
+      - Detail
+      - Details
+      - Instant
+      - Make
+      - Party
+      - Payouts
+      - Store
+      - Submit
+      - Third
     overlays:
       - type: APIs.io Search
         url: overlays/payouts-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/payouts-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/payouts
-      - type: OpenAPI
-        url: properties/payouts-openapi-original.yml
-  - aid: stripe:stripe-plans-api
-    name: Stripe Plans API
+    aid: adyen:adyen-payouts-api
+  - name: Adyen POS Terminal API
     description: >-
-      You can now model subscriptions more flexibly using the Prices API. It
-      replaces the Plans API and is backwards compatible to simplify your
-      migration.
+      This API provides endpoints for managing your point-of-sale (POS) payment
+      terminals. You can use the API to obtain information about a specific
+      terminal, retrieve overviews of your terminals and stores, and assign
+      terminals to a merchant account or store.
     tags:
-      - Plans
-      - Plan
-    overlays:
-      - type: APIs.io Search
-        url: overlays/plans-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/plans-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/plans
-      - type: OpenAPI
-        url: properties/plans-openapi-original.yml
-  - aid: stripe:stripe-prices-api
-    name: Stripe Prices API
-    description: >-
-      Prices define the unit cost, currency, and (optional) billing cycle for
-      both recurring and one-time purchases of products. Products help you track
-      inventory or provisioning, and prices help you track payment terms.
-      Different physical goods or levels of service should be represented by
-      products, and pricing options should be represented by prices. This
-      approach lets you change prices without having to change your provisioning
-      scheme.
-    tags:
-      - Prices
-      - Search
-    overlays:
-      - type: APIs.io Search
-        url: overlays/prices-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/prices-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/prices
-      - type: OpenAPI
-        url: properties/prices-openapi-original.yml
-  - aid: stripe:stripe-products-api
-    name: Stripe Products API
-    description: >-
-      Products describe the specific goods or services you offer to your
-      customers. For example, you might offer a Standard and Premium version of
-      your goods or service; each version would be a separate Product. They can
-      be used in conjunction with Prices to configure pricing in Payment Links,
-      Checkout, and Subscriptions.
-    tags:
-      - Products
-      - Search
-    overlays:
-      - type: APIs.io Search
-        url: overlays/products-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/products-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/products
-      - type: OpenAPI
-        url: properties/products-openapi-original.yml
-  - aid: stripe:stripe-promotion-codes-api
-    name: Stripe Promotion Codes API
-    description: >-
-      A Promotion Code represents a customer-redeemable code for a coupon. It
-      can be used to create multiple codes for a single coupon.
-    tags:
-      - Codes
-      - Promotion
-      - Code
-    overlays:
-      - type: APIs.io Search
-        url: overlays/promotion-codes-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/promotion-codes-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/promotion_codes
-      - type: OpenAPI
-        url: properties/promotion-codes-openapi-original.yml
-  - aid: stripe:stripe-quotes-api
-    name: Stripe Quotes API
-    description: >-
-      A Quote is a way to model prices that you’d like to provide to a customer.
-      Once accepted, it will automatically create an invoice, subscription or
-      subscription schedule.
-    tags:
-      - Quotes
-      - Accept
-      - Cancel
-      - Computed
-      - Items
-      - Line
-      - Upfront
-      - Finalize
-      - PDF
-    overlays:
-      - type: APIs.io Search
-        url: overlays/quotes-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/quotes-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/quotes
-      - type: OpenAPI
-        url: properties/quotes-openapi-original.yml
-  - aid: stripe:stripe-radar-api
-    name: Stripe Radar API
-    description: >-
-      Stripe Radar provides real-time fraud protection and requires no
-      additional development time. Fraud professionals can add Radar for Fraud
-      Teams to customize protection and get deeper insights.
-    tags:
-      - Early
-      - Fraud
-      - Radar
-      - Warnings
-      - Warning
-      - Items
-      - Value
-    overlays:
-      - type: APIs.io Search
-        url: overlays/radar-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/radar-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/radar
-      - type: OpenAPI
-        url: properties/radar-openapi-original.yml
-  - aid: stripe:stripe-refunds-api
-    name: Stripe Refunds API
-    description: >-
-      Refund objects allow you to refund a previously created charge that isn’t
-      refunded yet. Funds are refunded to the credit or debit card that’s
-      initially charged.
-    tags:
-      - Refunds
-      - Cancel
-    overlays:
-      - type: APIs.io Search
-        url: overlays/refunds-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/refunds-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/refunds
-      - type: OpenAPI
-        url: properties/refunds-openapi-original.yml
-  - aid: stripe:stripe-reporting-api
-    name: Stripe Reporting API
-    description: >-
-      The financial reports in the Dashboard provide downloadable reports in CSV
-      format for a variety of accounting and reconciliation tasks. These reports
-      are also available through the API, so you can schedule them to run
-      automatically or run them whenever you need to receive the associated
-      report files for accounting purposes.
-    tags:
-      - Reporting
-      - Reports
-      - Runs
-      - Types
-    overlays:
-      - type: APIs.io Search
-        url: overlays/reporting-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/reporting-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/reports/api
-      - type: OpenAPI
-        url: properties/reporting-openapi-original.yml
-  - aid: stripe:stripe-reviews-api
-    name: Stripe Reviews API
-    description: >-
-      Reviews can be used to supplement automated fraud detection with human
-      expertise.
-    tags:
-      - Reviews
-      - Approve
-    overlays:
-      - type: APIs.io Search
-        url: overlays/reviews-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/reviews-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/radar/reviews
-      - type: OpenAPI
-        url: properties/reviews-openapi-original.yml
-  - aid: stripe:stripe-setup-api
-    name: Stripe Setup API
-    description: >-
-      Use the Setup Intents API to set up a payment method for future payments.
-      It’s similar to a payment, but no charge is created. Set up a payment
-      method for future payments now.
-    tags:
-      - Attempts
-      - Setup
-      - Intents
-      - Intent
-      - Cancel
-      - Confirm
-      - Microdeposits
-      - Verify
-    overlays:
-      - type: APIs.io Search
-        url: overlays/setup-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/setup-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/payments/setup-intents
-      - type: OpenAPI
-        url: properties/setup-openapi-original.yml
-  - aid: stripe:stripe-shipping-rates-api
-    name: Stripe Shipping Rates API
-    description: >-
-      Shipping rates describe the price of shipping presented to your customers
-      and applied to a purchase.
-    tags:
-      - Rates
-      - Shipping
-      - Tokens
-    overlays:
-      - type: APIs.io Search
-        url: overlays/shipping-rates-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/shipping-rates-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/shipping_rates
-      - type: OpenAPI
-        url: properties/shipping-rates-openapi-original.yml
-  - aid: stripe:stripe-sigma-api
-    name: Stripe Sigma API
-    description: >-
-      If you have scheduled a Sigma query, you’ll receive a
-      sigma.scheduled_query_run.created webhook each time the query runs. The
-      webhook contains a ScheduledQueryRun object, which you can use to retrieve
-      the query results.
-    tags:
-      - Queries
-      - Runs
-      - Scheduled
-    overlays:
-      - type: APIs.io Search
-        url: overlays/sigma-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/sigma-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/sigma/scheduled_queries
-      - type: OpenAPI
-        url: properties/sigma-openapi-original.yml
-  - aid: stripe:stripe-sources-api
-    name: Stripe Sources API
-    description: >-
-      Source objects allow you to accept a variety of payment methods. They
-      represent a customer’s payment instrument, and can be used with the Stripe
-      API just like a Card object once chargeable, they can be charged, or can
-      be attached to customers.
-    tags:
-      - Sources
-      - Mandate
-      - Notifications
-      - Transactions
-      - Verify
-    overlays:
-      - type: APIs.io Search
-        url: overlays/sources-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/sources-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/sources
-      - type: OpenAPI
-        url: properties/sources-openapi-original.yml
-  - aid: stripe:stripe-subscription-api
-    name: Stripe Subscription API
-    description: Subscriptions allow you to charge a customer on a recurring basis.
-    tags:
-      - Items
-      - Subscriptions
-      - Record
-      - Summaries
-      - Usage
-      - Records
-      - Schedules
-      - Cancel
-      - Releases
-      - Search
-      - Exposed
-      - Discount
-      - Resume
-    overlays:
-      - type: APIs.io Search
-        url: overlays/subscription-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/subscription-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/subscriptions
-      - type: OpenAPI
-        url: properties/subscription-openapi-original.yml
-  - aid: stripe:stripe-tax-api
-    name: Stripe Tax API
-    description: >-
-      Automate sales tax, VAT, and GST compliance on all your transactions—low
-      or no code integrations available.
-    tags:
-      - Calculations
-      - Taxes
-      - Items
-      - Line
-      - Registrations
-      - Settings
-      - Transactions
-      - Reversals
-      - Codes
-      - Rates
-    overlays:
-      - type: APIs.io Search
-        url: overlays/tax-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/tax-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/tax
-      - type: OpenAPI
-        url: properties/tax-openapi-original.yml
-  - aid: stripe:stripe-terminal-api
-    name: Stripe Terminal API
-    description: >-
-      Use Stripe Terminal to accept in-person payments and extend Stripe
-      payments to your point of sale.
-    tags:
-      - Configurations
+      - Accounts
+      - Assign
+      - Details
+      - Store
+      - Stores
       - Terminal
-      - Connections
-      - Tokens
-      - Locations
-      - Readers
-      - Actions
-      - Cancel
-      - Intent
+      - Terminals
+      - The
+      - Under
+    overlays:
+      - type: APIs.io Search
+        url: overlays/pos-terminal-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/pos-terminal-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-pos-terminal-api
+  - name: Adyen Recurring API
+    description: >-
+      The Recurring APIs allow you to manage and remove your tokens or saved
+      payment details. Tokens should be created with validation during a payment
+      request. For more information, refer to our [Tokenization
+      documentation](https://docs.adyen.com/online-payments/tokenization).
+    tags:
+      - Accounts
+      - Ask
+      - Contracts
+      - Details
+      - Disable
+      - Existing
+      - Issuer
+      - Linked
+      - Notify
       - Payments
-      - Process
-      - Setup
-      - Refunds
+      - Permits
+      - Recurring
+      - Running
+      - Schedules
+      - Shopper
+      - Stored
+      - The
+    overlays:
+      - type: APIs.io Search
+        url: overlays/recurring-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/recurring-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-recurring-api
+  - name: Adyen Report Webhooks API
+    description: >-
+      Adyen sends webhooks to inform your system that reports were generated and
+      are ready to be downloaded. You can download reports programmatically by
+      making an HTTP GET request, or manually from your [Balance Platform
+      Customer Area](https://balanceplatform-test.adyen.com/balanceplatform).
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/report-webhooks-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/report-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-report-webhooks-api
+  - name: Adyen Stored Value API
+    description: A set of API endpoints to manage stored value products.
+    tags:
+      - Balance
+      - Cards
+      - Change
+      - Changes
+      - Checks
+      - Issues
+      - Load
+      - Loads
+      - Merge
+      - Methods
+      - Payments
+      - Status
+      - The
+      - Transactions
+      - Voids
+    overlays:
+      - type: APIs.io Search
+        url: overlays/stored-value-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/stored-value-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-stored-value-api
+  - name: Adyen Terminal API
+    description: >-
+      The Adyen Terminal API lets you make payments, issue refunds, collect
+      shopper information, and perform other shopper-terminal interactions using
+      a payment terminal supplied by Adyen.
+    tags:
+      - Acquisition
+      - Administrative
+      - Balance
+      - Balance Inquiry
+      - Card Acquisitions
+      - Card Reader Applications
+      - Cards
+      - Diagnosis
       - Display
-      - Sets
+      - Enable
+      - Enable Service
+      - Gettotals
+      - Inputs
+      - Inquiries
+      - Login
+      - Logout
+      - Loyalty
+      - Payments
+      - Print
+      - Readers
+      - Reconciliation
+      - Reversals
+      - Services
+      - Status
+      - Stored
+      - Stored Values
+      - Totals
+      - Transaction Status
+      - Transactions
+      - Value
     overlays:
       - type: APIs.io Search
         url: overlays/terminal-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/terminal-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/terminal
-      - type: OpenAPI
-        url: properties/terminal-openapi-original.yml
-  - aid: stripe:stripe-test-helpers-api
-    name: Stripe Test Helpers API
+    aid: adyen:adyen-terminal-api
+  - name: Adyen Test Cards API
     description: >-
-      Stripe provides a number of resources for testing your integration. Make
-      sure to test the following use cases before launch, and use our Postman
-      collection to make the testing process simpler.
+      The Test Cards API provides endpoints for generating custom test card
+      numbers. For more information, refer to [Custom test
+      cards](https://docs.adyen.com/development-resources/testing/create-test-cards)
+      documentation.
     tags:
-      - Balance
-      - Cash
-      - Customers
-      - Funds
-      - Helpers
-      - Tests
-      - Authorization
-      - Issuing
-      - Capture
-      - Expire
-      - Increment
-      - Reverse
       - Cards
-      - Deliveries
-      - Shipping
-      - Fail
+      - Creates
+      - More
+      - One
+      - Ranges
+      - Tests
+    overlays:
+      - type: APIs.io Search
+        url: overlays/test-cards-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/test-cards-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-test-cards-api
+  - name: Adyen Transaction Webhooks API
+    description: >-
+      Adyen sends webhooks to inform your system about incoming and outgoing
+      transfers in your platform. You can use these webhooks to build your
+      implementation. For example, you can use this information to update
+      balances in your own dashboards or to keep track of incoming funds.
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/transaction-webhooks-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/transaction-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-transaction-webhooks-api
+  - name: Adyen Transfer Webhooks API
+    description: >-
+      Adyen sends webhooks to inform your system about incoming and outgoing
+      transfers in your platform. You can use these webhooks to build your
+      implementation. For example, you can use this information to update
+      balances in your own dashboards or to keep track of incoming funds.
+    tags: []
+    overlays:
+      - type: APIs.io Search
+        url: overlays/transfer-webhooks-openapi-search.yml
+      - type: API Evangelist Ratings
+        url: overlays/transfer-webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-transfer-webhooks-api
+  - name: Adyen Transfers API
+    description: >-
+      This API provides endpoints that you can use to transfer funds, whether
+      when [paying out to a transfer
+      instrument](https://docs.adyen.com/marketplaces-and-platforms/payout-to-users/on-demand-payouts),
+      [sending funds to third
+      parties](https://docs.adyen.com/marketplaces-and-platforms/business-accounts/send-receive-funds)
+      for users with business bank accounts, or to [request a payout for a grant
+      offer](https://docs.adyen.com/marketplaces-and-platforms/capital). The API
+      also supports use cases for [getting transactions for business bank
+      accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts/transactions-api)
+      and getting [grants and its outstanding
+      balances](https://docs.adyen.com/marketplaces-and-platforms/capital#get-balances).
+    tags:
+      - Accounts
+      - Capital
+      - Details
+      - Funds
+      - Grants
+      - Grants""
+      - Payouts
+      - References
       - Returns
-      - Ship
-      - Force
       - Transactions
-      - Refunds
-      - Unlinked
-      - Methods
-      - Payments
-      - Present
-      - Readers
-      - Terminal
-      - Clocks
-      - Clock
-      - Advance
-      - Inbound
       - Transfers
-      - Treasury
-      - Succeed
-      - Outbound
-      - Posts
-      - Credits
-      - Received
-      - Debits
-    overlays:
-      - type: APIs.io Search
-        url: overlays/test-helpers-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/test-helpers-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/implementation-guides/billing/testing
-      - type: OpenAPI
-        url: properties/test-helpers-openapi-original.yml
-  - aid: stripe:stripe-tokens-api
-    name: Stripe Tokens API
-    description: >-
-      Tokenization is the process Stripe uses to collect sensitive card or bank
-      account details, or personally identifiable information (PII), directly
-      from your customers in a secure manner. A token representing this
-      information is returned to your server to use. Use our recommended
-      payments integrations to perform this process on the client-side. This
-      guarantees that no sensitive card data touches your server, and allows
-      your integration to operate in a PCI-compliant way.
-    tags:
-      - Tokens
-    overlays:
-      - type: APIs.io Search
-        url: overlays/tokens-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/tokens-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/tokens
-      - type: OpenAPI
-        url: properties/tokens-openapi-original.yml
-  - aid: stripe:stripe-topups-api
-    name: Stripe Topups API
-    description: >-
-      To top up your Stripe balance, you create a top-up object. You can
-      retrieve individual top-ups, as well as list all top-ups. Top-ups are
-      identified by a unique, random ID.
-    tags:
-      - Topups
-      - Cancel
-    overlays:
-      - type: APIs.io Search
-        url: overlays/topups-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/topups-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/topups
-      - type: OpenAPI
-        url: properties/topups-openapi-original.yml
-  - aid: stripe:stripe-transfers-api
-    name: Stripe Transfers API
-    description: >-
-      A Transfer object is created when you move funds between Stripe accounts
-      as part of Connect.
-    tags:
-      - Transfers
-      - Reversals
     overlays:
       - type: APIs.io Search
         url: overlays/transfers-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/transfers-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/transfers
-      - type: OpenAPI
-        url: properties/transfers-openapi-original.yml
-  - aid: stripe:stripe-treasury-api
-    name: Stripe Treasury API
+    aid: adyen:adyen-transfers-api
+  - name: Adyen Webhooks API
     description: >-
-      Stripe Treasury is a banking-as-a-service API that lets you embed
-      financial services in your product. With Stripe’s API, you can enable
-      businesses to hold funds, pay bills, earn yield, and manage their cash
-      flow. Many users build Stripe Issuing in conjunction with Stripe Treasury
-      to attach cards to spend funds in the account.
-    tags:
-      - Credit
-      - Reversals
-      - Treasury
-      - Debit
-      - Accounts
-      - Financial
-      - Features
-      - Inbound
-      - Transfers
-      - Cancel
-      - Outbound
-      - Payments
-      - Credits
-      - Received
-      - Debits
-      - Entries
-      - Transactions
+      We use webhooks to send you updates about payment status updates, newly
+      available reports, and other events that you can subscribe to. For more
+      information, refer to our
+      [documentation](https://docs.adyen.com/development-resources/webhooks).
+    tags: []
     overlays:
       - type: APIs.io Search
-        url: overlays/treasury-openapi-search.yml
+        url: overlays/webhooks-openapi-search.yml
       - type: API Evangelist Ratings
-        url: overlays/treasury-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/treasury
-      - type: OpenAPI
-        url: properties/treasury-openapi-original.yml
-  - aid: stripe:stripe-webhook-api
-    name: Stripe Webhook API
-    description: >-
-      You can configure webhook endpoints via the API to be notified about
-      events that happen in your Stripe account or connected accounts.
-    tags:
-      - Endpoints
-      - Webhooks
-    overlays:
-      - type: APIs.io Search
-        url: overlays/webhook-openapi-search.yml
-      - type: API Evangelist Ratings
-        url: overlays/webhook-openapi-api-evangelist-ratings.yml
-    properties:
-      - type: Documentation
-        url: https://stripe.com/docs/api/webhook_endpoints
-      - type: OpenAPI
-        url: properties/webhook-openapi-original.yml
+        url: overlays/webhooks-openapi-api-evangelist-ratings.yml
+    aid: adyen:adyen-webhooks-api
 maintainers:
-  - FN: APIs.json
-    email: info@apis.io
-common:
-  - type: Sign Up
-    url: https://dashboard.stripe.com/register
-  - type: Authentication
-    url: https://stripe.com/docs/api/authentication
-  - type: Blog
-    url: https://stripe.com/blog
-  - type: Status
-    url: https://status.stripe.com/
-  - type: Change Log
-    url: https://stripe.com/docs/upgrades#api-versions
-  - type: Terms of Service
-    url: https://stripe.com/privacy
-  - type: Support
-    url: https://support.stripe.com/
-score: 1381
+  - FN: API Evangelist
+    url: http://apievangelist.com
+    email: info@apievangelist.com
+aid: adyen
+score: 113
 overlays:
   - type: API Evangelist Ratings
     url: /overlays/api-evangelist-ratings.yml
