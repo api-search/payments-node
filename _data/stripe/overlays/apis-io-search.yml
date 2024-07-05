@@ -8,7 +8,8 @@ description: >-
 url: https://raw.githubusercontent.com/api-search/payments/main/_apis/stripe/apis.md
 created: 2024/04/14
 modified: '2024-07-03'
-tags: []
+tags:
+  - Payments
 apis:
   - aid: stripe:stripe-accounts-api
     name: Stripe Accounts API
