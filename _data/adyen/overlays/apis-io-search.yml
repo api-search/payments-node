@@ -3,7 +3,7 @@ description: >-
   End-to-end payments, data, and financial management in a single solution. Meet
   the financial technology platform that helps you realize your ambitions
   faster.
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/adyen.yml
+url: https://raw.githubusercontent.com/api-search/payments/main/_data/adyen/overlays/apis-io-search.yml
 created: 2024/04/14
 modified: '2024-07-04'
 specificationVersion: '0.18'
