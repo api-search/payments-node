@@ -20,6 +20,7 @@ github_org: api-search
 github_repo: payments
 
 search_local: true
+search_url: https://search-api.apis.io/search/apis
 
 collections:
   apis:
@@ -28,12 +29,6 @@ collections:
   tags:
     output: true
     permalink: /tags/:path/   
-  rules:
-    output: true
-    permalink: /rules/:path/  
-  properties:
-    output: true
-    permalink: /properties/:path/           
 
 defaults:
 
@@ -48,15 +43,4 @@ defaults:
       type:         tags
     values:
       layout:       tags      
-
-  - scope:
-      path:         ""
-      type:         rules
-    values:
-      layout:       rules        
-
-  - scope:
-      path:         ""
-      type:         properties
-    values:
-      layout:       properties         
+     

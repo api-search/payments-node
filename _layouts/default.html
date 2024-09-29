@@ -1,16 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <head>   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.name }} - {{ page.title }}</title>
     <link href="{{ site.url }}/assets/bootstrap.min.css" rel="stylesheet">
     <link href="{{ site.url }}/assets/sticky-footer.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/bootstrap-toggle.min.css" rel="stylesheet"> 
+    <script src="{{ site.url }}/assets/jquery-3.7.1.min.js"></script> 
+    <script src="{{ site.url }}/assets/bootstrap.bundle.min.js"></script>
+    <script src="{{ site.url }}/assets/bootstrap-toggle.min.js"></script>  
+    <script src="{{ site.url }}/assets/js-yaml.min.js"></script>    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6H4KFSEF6P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6H4KFSEF6P');
+    </script>     
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="https://apis.io">{{ site.name }}</a>
+        <a class="navbar-brand" href="#">{{ site.name }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,54 +34,58 @@
               <a class="nav-link active" aria-current="page" href="{{ site.url }}/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/apis/">APIs</a>
-            </li>
+              <a class="nav-link" href="{{ site.url }}/about/">About</a>
+            </li>                                      
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/tags/">Tags</a>
-            </li>                                 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Network
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for network in site.data.apis.network %}
-                <li><a class="dropdown-item" href="{{ network.url | replace: "apis.json","" }}">{{ network.name }}</a></li>
-                {% endfor %}               
-              </ul>
-            </li>
+              <a class="nav-link" href="{{ site.url }}/network/">Network</a>
+            </li>      
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.url }}/support/">Support</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.url }}/blog/">Blog</a>
+            </li>                     
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.url }}/add/">Add</a>
+            </li>                                                
           </ul>
-          {% if page.title != 'Search' %}
-            <!--<form class="d-flex" role="search">
+          {% if page.title != 'Network Search' %}
+            <!--
+            <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>-->
+            </form>
+            -->
           {% endif %} 
         </div>
       </div>
     </nav>
     <!--
     <div class="alert alert-danger" role="alert" style="text-align: center;">
-      This Search is Exploratory -- <a href="https://github.com/api-search/explore/issues">Submit An Issue With Any Questions</a>!
+      This Search is in an Alpha Stage -- <a href="https://github.com/api-search/explore/issues">Submit An Issue</a>!
     </div>
-    --->
+    -->
     <div class="container my-5">
       {{ content }}
     </div>
 
-    <script src="{{ site.url }}/assets/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="{{ site.url }}/assets/js-yaml.min.js"></script>
-
     <footer class="footer">
       <div class="container">
-        <table cellspacing="3" cellpadding="2" align="center">
-          <tr>
-            <td><a href="https://apis.io" style="color: #000;">APIs.io</a></td>
-            <td width="25" align="center">|</td>
-            <td><a href="https://apis.io/about/" style="color: #000;">About</a></td>
-            <td width="25" align="center">|</td>
-            <td><a href="https://apisjson.org" style="color: #000;">APIs.json</a></td>
+        <div class="container text-center">
+          <div class="row">
+              <div class="col">
+                <a href="http://apicommons.org" style="color: #000;">API Commons</a>
+              </div>
+              <div class="col">
+                <td><a href="https://developer.apis.io" style="color: #000;">Developers</a></td>
+              </div>
+              <div class="col">
+                <a href="https://github.com/api-search/api-search" style="color: #000;">GitHub</a>
+              </div>     
+          </div>
+      </div>         
       </div>
     </footer>
-
+    
   </body>
 </html>
