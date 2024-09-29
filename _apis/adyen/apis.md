@@ -1,4 +1,3 @@
----
 name: Adyen
 description: >-
   End-to-end payments, data, and financial management in a single solution. Meet
@@ -838,5 +837,3 @@ maintainers:
     url: http://apievangelist.com
     email: info@apievangelist.com
 aid: adyen
-
----

@@ -1,4 +1,3 @@
----
 specificationVersion: '0.18'
 aid: stripe
 name: Stripe
@@ -6,7 +5,8 @@ description: >-
   Millions of companies of all sizes use Stripe online and in person to accept
   payments, send payouts, automate financial processes, and ultimately grow
   revenue.
-url: https://raw.githubusercontent.com/api-search/payments/main/_apis/stripe/apis.md
+url: >-
+  https://raw.githubusercontent.com/api-search/payments/main/_apis/stripe/apis.md
 created: 2024/04/14
 modified: '2024-07-03'
 tags: []
@@ -1192,5 +1192,3 @@ common:
     url: https://stripe.com/privacy
   - type: Support
     url: https://support.stripe.com/
-
----

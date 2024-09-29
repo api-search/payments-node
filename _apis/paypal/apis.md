@@ -1,11 +1,11 @@
----
 name: Paypal
 description: >-
   PayPal allows any business or individual with an email address to securely,
   conveniently and cost-effectively send and receive payments online. Our
   network builds on the existing financial infrastructure of bank accounts and
   credit cards to create a global, real-time payment solution.
-url: https://raw.githubusercontent.com/api-search/payments/main/_apis/paypal/apis.md
+url: >-
+  https://raw.githubusercontent.com/api-search/payments/main/_apis/paypal/apis.md
 created: 2024/04/14
 modified: '2024-07-04'
 specificationVersion: '0.18'
@@ -68,5 +68,3 @@ score: 25
 overlays:
   - type: API Evangelist Ratings
     url: /overlays/api-evangelist-ratings.yml
-
----
