@@ -31,22 +31,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ site.url }}/">Home</a>
+              <a class="nav-link active" aria-current="page" href="https://apis.io/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/about/">About</a>
-            </li>                                      
+              <a class="nav-link" href="https://apis.io/about/">About</a>
+            </li>   
+            {% if site.node != 'website' %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/network/">Network</a>
-            </li>      
+              <a class="nav-link" href="{{ site.url }}/apis/">APIs</a>
+            </li> 
+            {% endif %}                                                
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/support/">Support</a>
+              <a class="nav-link" href="https://apis.io/network/">Network</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" href="https://apis.io/support/">Support</a>
             </li>  
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/blog/">Blog</a>
+              <a class="nav-link" href="https://apis.io/blog/">Blog</a>
             </li>                     
             <li class="nav-item">
-              <a class="nav-link" href="{{ site.url }}/add/">Add</a>
+              <a class="nav-link" href="https://apis.io/add/">Add</a>
             </li>                                                
           </ul>
           {% if page.title != 'Network Search' %}
