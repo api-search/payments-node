@@ -1,3 +1,4 @@
+---
 name: Paypal
 description: >-
   PayPal allows any business or individual with an email address to securely,
@@ -68,3 +69,4 @@ score: 25
 overlays:
   - type: API Evangelist Ratings
     url: /overlays/api-evangelist-ratings.yml
+---

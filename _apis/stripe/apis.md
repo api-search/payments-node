@@ -1,3 +1,4 @@
+---
 specificationVersion: '0.18'
 aid: stripe
 name: Stripe
@@ -1192,3 +1193,4 @@ common:
     url: https://stripe.com/privacy
   - type: Support
     url: https://support.stripe.com/
+---
